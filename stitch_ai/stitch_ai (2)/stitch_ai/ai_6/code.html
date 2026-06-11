@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#564334",
+                    "surface-container": "#f0edef",
+                    "error-container": "#ffdad6",
+                    "surface-container-low": "#f6f3f5",
+                    "on-tertiary-container": "#3d3f3f",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "secondary-container": "#dfdfe1",
+                    "on-background": "#1b1b1d",
+                    "on-surface": "#1b1b1d",
+                    "surface-container-highest": "#e4e2e4",
+                    "primary-fixed": "#ffdcc3",
+                    "surface": "#fcf8fb",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#e2e2e4",
+                    "surface-bright": "#fcf8fb",
+                    "surface-dim": "#dcd9dc",
+                    "on-primary-container": "#623200",
+                    "inverse-on-surface": "#f3f0f2",
+                    "primary-container": "#ff8c00",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "tertiary-container": "#a9aaaa",
+                    "tertiary": "#5d5f5f",
+                    "surface-container-high": "#eae7ea",
+                    "surface-variant": "#e4e2e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-error": "#ffffff",
+                    "secondary": "#5d5e60",
+                    "inverse-surface": "#303032",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#616365",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-tint": "#904d00",
+                    "outline": "#897362",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "outline-variant": "#ddc1ae",
+                    "inverse-primary": "#ffb77d",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "primary-fixed-dim": "#ffb77d",
+                    "background": "#fcf8fb",
+                    "primary": "#904d00",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-sm": "8px",
+                    "unit": "4px",
+                    "container-padding": "20px",
+                    "stack-gap-md": "16px",
+                    "gutter": "12px",
+                    "stack-gap-lg": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        body {
+            background-color: #fcf8fb;
+            color: #1b1b1d;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(229, 229, 231, 0.5);
+        }
+
+        .card-shadow {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md scroll-hide">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20 h-14 flex items-center px-container-padding">
+<div class="flex items-center w-full relative">
+<button class="active:scale-95 transition-transform text-primary flex items-center justify-center p-1 -ml-2">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'wght' 300;">chevron_left</span>
+</button>
+<h1 class="absolute left-1/2 -translate-x-1/2 font-headline-sm text-headline-sm text-on-surface">已完成</h1>
+</div>
+</header>
+<main class="pt-20 pb-12 px-container-padding max-w-2xl mx-auto space-y-stack-gap-lg">
+<!-- Search Section -->
+<section class="fade-in visible" style="animation-delay: 0.1s;">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/60">search</span>
+<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary-container/30 rounded-2xl py-3.5 pl-12 pr-4 text-body-md font-body-md text-on-surface placeholder-on-surface-variant/40 transition-all shadow-sm" placeholder="搜索圆满时刻..." type="text">
+</div>
+</section>
+<!-- Completed List -->
+<section class="space-y-stack-gap-md">
+<!-- Card 1 -->
+<div class="fade-in group relative rounded-3xl overflow-hidden card-shadow aspect-[4/3] w-full visible" style="animation-delay: 0.2s;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, high-angle photograph of a group of friends celebrating their graduation during a soft golden hour sunset on a pristine university campus. The mood is emotionally resonant and joyous, with warm light bathing the scene in a nostalgic glow. The visual style follows a minimalist aesthetic with clean lines and premium color grading, emphasizing themes of achievement and new beginnings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTxlQ_TWiWGWVEsywr-zwYoXFBDldyOWHzQ7kj8ByUlOQd6tB5xIPJ7H-iG_oTZmLZ-78IYTsUzfiYmwK-iQyTma4gSBAIVrozlLkAAcBUe000JG76bj2QdeWVLuWcYanY_Ii82exEWGR9rDyDsZNihLAhRfusTpC3lisJCNfQJqdvBqZl9R6jY000ZYVRjKmYffzW76IMzS2o3RQ_M6zyiOMTj6xVu6KpSNdi1Zn7KOGJZY1mcIIJPh-8M-q2E3erRQQbJWj0dXQ">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        已完成
+                    </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-white mb-1">毕业旅行：大理洱海</h3>
+<p class="text-white/80 text-label-md font-label-md">2024.01.15 完成</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="fade-in group relative rounded-3xl overflow-hidden card-shadow aspect-[4/3] w-full visible" style="animation-delay: 0.3s;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene and tranquil minimalist landscape featuring a solitary runner on a winding path through a misty, emerald green park at dawn. The lighting is diffused and ethereal, creating a sense of calm and discipline. The aesthetic is modern and sophisticated, using a natural color palette of greens and soft grays to represent healthy lifestyle choices and personal milestones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgzNxH8_rqJruX6YXB5PmJmI9tocgCR1URff2RlPA_QF09iEnOMLdKMGrXKu_gPjYdmSuiKDDfhX4d571v8XD2fgJckRhwLUNIyrlSawd_qJ-LG4fTuyigVNUa3L6lEuVnvhR62KRaG9eKNlUzPmZcXHMxRnhpmwMz9ZA-pPrQFwPdblGzgP3LYcf4hb6gND9r27Jmwgi9pSjqmXjG1qgKs8VZmbLfQKp8bASoZrB9OtXamdAqYC_V1nMbDqRfo654dnR5GcfEWes">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        已完成
+                    </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-white mb-1">100天跑步计划</h3>
+<p class="text-white/80 text-label-md font-label-md">2023.12.31 完成</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="fade-in group relative rounded-3xl overflow-hidden card-shadow aspect-[4/3] w-full visible" style="animation-delay: 0.4s;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A warm, intimate indoor setting showing a beautifully organized home office desk with a finished creative project, softly lit by a designer lamp. The atmosphere is cozy and productive, following a premium Apple-style minimalist layout with high attention to textural detail. A palette of soft beiges and warm wood tones creates an emotional sense of accomplishment and creative fulfillment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCFcek6loc7D2kVDZuWRDXOC6zOGRmEv_bzH6dmBUrb30TnjYAmQdFReWYS1ygRdiBUs8Td-8uf4RLqCPk892Q3nguIJovoiIV6O6tI494lWLQ4fV3o1wbkY8VTDqQxJfqxPn0KbSGdjRVWNuvB0Cb77okZhKrNLgsSoxtgR7D8ooNArQ77_e5Wv78-pV3_bzXS9PiFcca11UTeDvC97azalUvxtWEQUsI_eB7ScAFhdRwp1_c8FVNjAMO4PM1cJSemdF3XCsMWSA">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        已完成
+                    </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-white mb-1">学会演奏一首钢琴曲</h3>
+<p class="text-white/80 text-label-md font-label-md">2023.11.20 完成</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="fade-in group relative rounded-3xl overflow-hidden card-shadow aspect-[4/3] w-full visible" style="animation-delay: 0.5s;">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking landscape photograph of a snowy mountain peak illuminated by the first light of a winter morning, signifying a challenging goal reached. The lighting is crisp and blue-toned with brilliant white highlights, embodying a serene and premium aesthetic. The composition is expansive and minimalist, capturing the emotional weight of a significant personal triumph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWuT1PJlP8YR-RkQf3vRFuJ0DXXFZDMavDr_CmCwbalBDrmlCRMl_y52gOHQ41zQpo_TuC8iaAWT7w_wre5C4W8PJg0qbKzQquS8TNfMZ-rdU6wBQ-ZWm8H8mRCA-HbKpT86_VgIpgM2G9t0kXFx4PVXROJQLaJEYoG0NDSQfSh42_27aTptYnjBc8mN4fVnN_0tPBotQUuzPPs2RUpqO-04fewQzKRCqM02inaWht9HFJ4e76cQb6Ohjp5wnXIzzMaVdZ-C4ZOR0">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 rounded-full bg-primary-container text-white text-label-sm font-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        已完成
+                    </span>
+</div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="font-headline-md text-headline-md text-white mb-1">年度登山挑战</h3>
+<p class="text-white/80 text-label-md font-label-md">2023.10.15 完成</p>
+</div>
+</div>
+</section>
+<!-- End of list -->
+<footer class="pt-8 text-center fade-in visible" style="animation-delay: 0.6s;">
+<div class="flex flex-col items-center gap-2">
+<div class="w-8 h-[1px] bg-outline-variant/30"></div>
+<p class="text-on-surface-variant/40 font-label-md text-label-md tracking-widest">珍藏每一个圆满时刻</p>
+</div>
+</footer>
+</main>
+<!-- Floating Atmosphere Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.fade-in');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            cards.forEach(card => observer.observe(card));
+
+            // Micro-interaction for back button
+            const backBtn = document.querySelector('button');
+            backBtn.addEventListener('click', () => {
+                backBtn.style.opacity = '0.5';
+                setTimeout(() => { backBtn.style.opacity = '1'; }, 200);
+            });
+        });
+    </script>
+</body></html>

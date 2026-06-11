@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Cumulative Records - AI Countdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#3d3f3f",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "on-secondary-container": "#616365",
+                        "outline": "#897362",
+                        "secondary-fixed": "#e2e2e4",
+                        "on-background": "#1b1b1d",
+                        "tertiary-fixed": "#e2e2e2",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#454749",
+                        "inverse-primary": "#ffb77d",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container": "#f0edef",
+                        "surface-container-low": "#f6f3f5",
+                        "primary-fixed": "#ffdcc3",
+                        "inverse-surface": "#303032",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#5d5e60",
+                        "on-error": "#ffffff",
+                        "tertiary": "#5d5f5f",
+                        "inverse-on-surface": "#f3f0f2",
+                        "primary": "#904d00",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-high": "#eae7ea",
+                        "surface-tint": "#904d00",
+                        "on-primary-container": "#623200",
+                        "surface-variant": "#e4e2e4",
+                        "tertiary-container": "#a9aaaa",
+                        "secondary-container": "#dfdfe1",
+                        "surface": "#fcf8fb",
+                        "surface-dim": "#dcd9dc",
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "on-surface-variant": "#564334",
+                        "on-surface": "#1b1b1d",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#ffb77d",
+                        "background": "#fcf8fb",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#2f1500",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e4e2e4",
+                        "outline-variant": "#ddc1ae",
+                        "surface-bright": "#fcf8fb",
+                        "primary-container": "#ff8c00",
+                        "on-tertiary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1.25rem",
+                        "3xl": "1.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-lg": "24px",
+                        "container-padding": "20px",
+                        "gutter": "12px",
+                        "stack-gap-md": "16px",
+                        "unit": "4px",
+                        "stack-gap-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "headline-sm-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fb;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .inset-gradient {
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pill-shadow {
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.04);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 glass-header px-container-padding h-14 flex justify-between items-center transition-all duration-300">
+<button aria-label="Go Back" class="w-11 h-11 flex items-center justify-center text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[24px]">chevron_left</span>
+</button>
+<h1 class="font-headline-sm-mobile text-headline-sm-mobile text-on-surface flex-1 text-center font-bold">累计记录</h1>
+<button class="w-10 h-10 flex items-center justify-end text-on-surface-variant active:scale-95 transition-transform" id="searchToggle">
+<span class="material-symbols-outlined text-[24px]">search</span>
+</button>
+</header>
+<main class="pt-20 pb-12 px-container-padding max-w-2xl mx-auto">
+<!-- Search Section -->
+<section class="mb-stack-gap-lg">
+<div class="relative group">
+<input class="w-full h-12 bg-surface-container-low border-none rounded-2xl px-12 py-3 font-body-md text-on-surface placeholder:text-on-secondary-container focus:ring-2 focus:ring-primary/20 transition-all outline-none" id="searchInput" placeholder="搜索累计的重要时刻..." type="text">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-secondary-container">search</span>
+<button class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-on-secondary-container hover:text-on-surface" id="clearSearch">
+<span class="material-symbols-outlined text-body-md">close</span>
+</button>
+</div>
+</section>
+<!-- Cumulative List Grid -->
+<div class="grid grid-cols-1 gap-gutter" id="resultsContainer">
+<!-- Record Card 1 -->
+<div class="record-card relative h-48 rounded-3xl overflow-hidden pill-shadow group transition-transform active:scale-[0.98]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A tranquil scene of a lone traveler sitting by a misty lake at dawn, surrounded by soft orange and pink morning light. The atmosphere is contemplative and serene, reflecting a sense of achievement and calm after a long journey. Minimalist aesthetic with high-quality cinematic lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzGFudd8OIHvxiNDkOgalLjimLhkkxvrJID7Ho3FJiM_gS7S-2G1IMOK7_n0eKBzA-bPuC6UO3m305IUg9L7VQC9FpRLFkloe54nGRGSCDgqC3Vq5sQzJKP7sADEKukNhuwyBpju6bBE9Det0sxKvARhgxwIyUtdy1uvFdS5Aq_H2wGcEXk0ZVFPaibtXJ7GELWZ4uWcQ6pMCS8VKvFPDXdu2KnmqfeIp1sTcN_TRRCAgoPWIwVaPxhPyq7-rmBLASamtXbdqd72g')"></div>
+<div class="absolute inset-0 inset-gradient"></div>
+<div class="absolute inset-0 p-stack-gap-md flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="font-headline-md text-white text-headline-sm">100天跑步计划</h3>
+<p class="font-label-md text-white/80">完成日期 · 2023.12.30</p>
+</div>
+<div class="px-3 py-1 bg-primary-container rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-on-primary-container tracking-wider">已完成</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Record Card 2 -->
+<div class="record-card relative h-48 rounded-3xl overflow-hidden pill-shadow group transition-transform active:scale-[0.98]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A lush, sun-drenched forest with golden light filtering through tall green trees. The ground is covered in vibrant ferns and moss, creating a healing and rejuvenating atmosphere. The lighting is ethereal and soft, evoking a feeling of peace and natural beauty, consistent with a premium lifestyle brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOHkCQBbfZgHaPMuAOQK0ZZSYfxdSZApLSmUpGAZxxranvvC7BZAQcBjhYiZWStVotxx2nGuc-taHTOYX9rEMAj5PaYnyfABq207cKhG6UadZnQ-TyaYW1JttPT2-mXkS-G4Oq206fTiPNuSq9GFAS-Ofo3_9OTPKdAYmLzzMOjUTL3msQaG2wGzHPVQHXsJBaCkhFSB3GREIZVunrCRlBDua0MChJTfwcpPzd3OZtsBTc6H8IRNdETyMCGEeuZJ7Q24IwuErwCvk')"></div>
+<div class="absolute inset-0 inset-gradient"></div>
+<div class="absolute inset-0 p-stack-gap-md flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="font-headline-md text-white text-headline-sm">毕业旅行</h3>
+<p class="font-label-md text-white/80">完成日期 · 2023.06.15</p>
+</div>
+<div class="px-3 py-1 bg-primary-container rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-on-primary-container tracking-wider">已完成</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Record Card 3 -->
+<div class="record-card relative h-48 rounded-3xl overflow-hidden pill-shadow group transition-transform active:scale-[0.98]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A breathtaking night sky filled with the Milky Way reflected in a perfectly still mountain lake. The tall pine trees frame the majestic peaks in the distance. The mood is silent, magical, and profoundly calm, using deep blues and stellar purples to create a high-end emotional aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBgORdVp2UkIrLNwjmo8IGxA5yvMCw5Pn3iXZvnlGtuH_XcK58SyQ_kbXK78Nnd9UoMdCogqjoHW79axPrsPrPds7UOrNGjvtix576SJ_KlS5JIpYKT6fmp638UOhNtfcuMiLYmctq3gLimEqawLKcbqKNaXifE0nilQpVsBtgUicdqB_E-boDdDyN5M7ndn8xbSS4bRUeRZj0MqOxNFXzqgvgCW4B1JbiCh4mmggeAEVgjxQMGKQskvzfkCu-GGqB4wSvaKauwZQs')"></div>
+<div class="absolute inset-0 inset-gradient"></div>
+<div class="absolute inset-0 p-stack-gap-md flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="font-headline-md text-white text-headline-sm">登顶富士山</h3>
+<p class="font-label-md text-white/80">完成日期 · 2023.08.21</p>
+</div>
+<div class="px-3 py-1 bg-primary-container rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-on-primary-container tracking-wider">已完成</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Record Card 4 -->
+<div class="record-card relative h-48 rounded-3xl overflow-hidden pill-shadow group transition-transform active:scale-[0.98]">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A pristine white sand beach meeting crystal clear turquoise waters under a vast, cloudless blue sky. The composition is minimalist and airy, utilizing high-key lighting and a soft color palette to convey a sense of absolute tranquility and clarity. The scene feels like a cherished, perfect memory." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDVQMKEmx31ySJp4r0cxh0cCPF99W3K7PY0Rg54biqww4Z_Q4Fu2X2V6bs44puIecIubyz_FPkx3L5ggTh3NDqoRCQ_ehgDO--JK4VJomc7qgxWrm0RMe47vJAvKyCySr8NRQBB2EAShSDpsl5NC060rMc1eY28_5ldYB2WeXYy2V5_nPAPmvqj6BOW2KD-ix3BEcXaSvaiusyU1quKRfEhnyZBpJ-O-9jFHj8_iBfF1KWMOCnbjmkjyYXLBJJ6tg4BLeuc5tN2XvI')"></div>
+<div class="absolute inset-0 inset-gradient"></div>
+<div class="absolute inset-0 p-stack-gap-md flex flex-col justify-end">
+<div class="flex justify-between items-end">
+<div class="space-y-1">
+<h3 class="font-headline-md text-white text-headline-sm">海岛放空计划</h3>
+<p class="font-label-md text-white/80">完成日期 · 2023.11.11</p>
+</div>
+<div class="px-3 py-1 bg-primary-container rounded-full flex items-center gap-1 shadow-lg">
+<span class="material-symbols-outlined text-[14px] text-on-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-sm text-on-primary-container tracking-wider">已完成</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State (Initially Hidden) -->
+<div class="hidden flex-col items-center justify-center py-24 px-8 text-center space-y-4" id="emptyState">
+<div class="w-48 h-48 bg-surface-container rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-[80px] text-on-surface-variant/30">event_busy</span>
+</div>
+<p class="font-headline-sm text-on-surface-variant">暂无相关记录</p>
+<p class="font-body-md text-secondary">换个关键词试试，寻找你的珍贵瞬间</p>
+</div>
+</main>
+<!-- Micro-interactions Script -->
+<script>
+        const searchInput = document.getElementById('searchInput');
+        const clearSearch = document.getElementById('clearSearch');
+        const recordCards = document.querySelectorAll('.record-card');
+        const emptyState = document.getElementById('emptyState');
+        const resultsContainer = document.getElementById('resultsContainer');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            let visibleCount = 0;
+
+            if (query.length > 0) {
+                clearSearch.classList.remove('hidden');
+            } else {
+                clearSearch.classList.add('hidden');
+            }
+
+            recordCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                resultsContainer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            } else {
+                resultsContainer.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+            }
+        });
+
+        clearSearch.addEventListener('click', () => {
+            searchInput.value = '';
+            searchInput.dispatchEvent(new Event('input'));
+            searchInput.focus();
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+                header.classList.remove('bg-surface/80');
+                header.classList.add('bg-white/90');
+            } else {
+                header.classList.remove('shadow-sm');
+                header.classList.add('bg-surface/80');
+                header.classList.remove('bg-white/90');
+            }
+        });
+    </script>
+
+
+
+
+</body></html>

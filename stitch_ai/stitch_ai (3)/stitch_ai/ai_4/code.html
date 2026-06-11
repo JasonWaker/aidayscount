@@ -1,0 +1,277 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>帮助与反馈</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-variant": "#e4e2e4",
+                        "surface-tint": "#904d00",
+                        "primary": "#904d00",
+                        "surface": "#fcf8fb",
+                        "surface-bright": "#fcf8fb",
+                        "on-surface-variant": "#564334",
+                        "inverse-primary": "#ffb77d",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "background": "#fcf8fb",
+                        "on-primary-container": "#623200",
+                        "on-background": "#1b1b1d",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#5d5f5f",
+                        "surface-container-low": "#f6f3f5",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-container": "#616365",
+                        "on-secondary-fixed-variant": "#454749",
+                        "on-surface": "#1b1b1d",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-dim": "#dcd9dc",
+                        "primary-container": "#ff8c00",
+                        "secondary-container": "#dfdfe1",
+                        "outline-variant": "#ddc1ae",
+                        "inverse-surface": "#303032",
+                        "surface-container-high": "#eae7ea",
+                        "on-tertiary-container": "#3d3f3f",
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "on-error-container": "#93000a",
+                        "outline": "#897362",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdcc3",
+                        "secondary-fixed": "#e2e2e4",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "surface-container": "#f0edef",
+                        "tertiary-container": "#a9aaaa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#2f1500",
+                        "secondary": "#5d5e60",
+                        "surface-container-highest": "#e4e2e4",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-padding": "20px",
+                        "gutter": "12px",
+                        "stack-gap-sm": "8px",
+                        "stack-gap-lg": "24px",
+                        "unit": "4px",
+                        "stack-gap-md": "16px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fb;
+            color: #1b1b1d;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid #e5e5e7;
+        }
+        .faq-transition {
+            transition: max-height 0.3s ease-out, opacity 0.2s ease-in;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e4e2e4;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md overflow-x-hidden" data-mode="connect">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center h-14 px-container-padding">
+<div class="flex items-center gap-stack-gap-md">
+<button class="active:scale-95 transition-transform text-primary" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-primary">帮助与反馈</h1>
+</div>
+<div class="flex items-center gap-stack-gap-md">
+<button class="active:scale-95 transition-transform text-primary hover:opacity-80">
+
+</button>
+</div>
+</header>
+<main class="pt-20 px-container-padding space-y-stack-gap-lg pb-4">
+<!-- Search Section -->
+<section class="relative">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-1 focus:ring-primary-container font-body-md text-on-surface transition-all" placeholder="搜索常见问题..." type="text">
+</div>
+</section>
+<!-- FAQ Section -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-gap-md">常见问题</h2>
+<div class="space-y-stack-gap-sm">
+<!-- FAQ Item 1 -->
+<div class="glass-card rounded-xl overflow-hidden">
+<button class="w-full px-4 py-4 flex items-center justify-between text-left group" onclick="toggleFaq(1)">
+<span class="font-body-lg text-body-lg text-on-surface">如何创建新的倒数日？</span>
+<span class="material-symbols-outlined text-outline group-active:text-primary transition-transform duration-300" id="faq-icon-1">expand_more</span>
+</button>
+<div class="max-height-0 opacity-0 overflow-hidden faq-transition bg-surface-container-lowest/50" id="faq-content-1">
+<p class="px-4 pb-4 text-on-surface-variant text-body-md">
+                            在首页点击底部的 "+" 按钮，即可进入创建页面。您可以自定义标题、目标日期、背景图片及分类图标。AI 将根据您的描述自动建议配色方案。
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-card rounded-xl overflow-hidden">
+<button class="w-full px-4 py-4 flex items-center justify-between text-left group" onclick="toggleFaq(2)">
+<span class="font-body-lg text-body-lg text-on-surface">数据会同步到云端吗？</span>
+<span class="material-symbols-outlined text-outline group-active:text-primary transition-transform duration-300" id="faq-icon-2">expand_more</span>
+</button>
+<div class="max-height-0 opacity-0 overflow-hidden faq-transition bg-surface-container-lowest/50" id="faq-content-2">
+<p class="px-4 pb-4 text-on-surface-variant text-body-md">
+                            是的，只要您登录了账号，所有的倒数日数据都会实时加密同步。您可以跨设备无缝访问您的所有珍贵时刻。
+                        </p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-card rounded-xl overflow-hidden">
+<button class="w-full px-4 py-4 flex items-center justify-between text-left group" onclick="toggleFaq(3)">
+<span class="font-body-lg text-body-lg text-on-surface">AI 智能分析如何工作？</span>
+<span class="material-symbols-outlined text-outline group-active:text-primary transition-transform duration-300" id="faq-icon-3">expand_more</span>
+</button>
+<div class="max-height-0 opacity-0 overflow-hidden faq-transition bg-surface-container-lowest/50" id="faq-content-3">
+<p class="px-4 pb-4 text-on-surface-variant text-body-md">
+                            AI 通过分析您设定的事件关键词，自动匹配最符合情感氛围的艺术风格和背景音乐，为您打造沉浸式的仪式感体验。
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feedback Form -->
+<section class="glass-card p-6 rounded-2xl">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-gap-md">意见反馈</h2>
+<form class="space-y-stack-gap-md">
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant mb-2 block">问题描述</label>
+<textarea class="w-full p-4 bg-surface-container-low border-b-2 border-transparent focus:border-primary-container focus:ring-0 rounded-lg h-32 resize-none transition-all placeholder:text-outline" placeholder="请详细描述您遇到的问题或建议..."></textarea>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant mb-2 block">上传截图 (最多3张)</label>
+<div class="flex gap-stack-gap-md">
+<div class="w-20 h-20 bg-surface-container-low border-2 border-dashed border-outline-variant/30 rounded-xl flex items-center justify-center cursor-pointer hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+</div>
+<div class="relative w-20 h-20 rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A professional close-up photograph of a modern smartphone screen displaying a minimalist countdown application interface. The lighting is soft and natural, emphasizing the clean white background and warm orange accents of the UI. The overall aesthetic is sophisticated, premium, and calm, reflecting an organized lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADN1vJQCtO3Pf0rslHELlU-5AbfIaFzh6FeHt2uOa_PC05xpplo_0RlVX8o52e04aC-hiXzr843O_UswhE4mBXU1E9jsxM1QTsRawkL5cjj6pMfhNO8cDSAi8kWyeSo1Oghn1tjvKg9MdVB0Z0LEOVCYBOnPT45ZnZjI60V6ZfXMnwn3xx__dzZsRDf_WlgfX2_NO5UrWcNi5gBF7ra23uLsgGQcdp_TZIe5c-aF2M9CI98NCiZA9E4ZJHRoIGG4mgruqsEZEKveY">
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-headline-sm">delete</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-headline-sm py-4 rounded-full active:scale-95 transition-all shadow-lg shadow-primary-container/20" type="button">
+                    提交反馈
+                </button>
+</form>
+</section>
+<!-- Contact Support -->
+<section class="flex flex-col items-center gap-stack-gap-md py-6">
+
+<button class="flex items-center gap-2 px-8 py-3 bg-white border border-outline-variant/30 rounded-full text-primary font-headline-sm active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined">support_agent</span>
+                联系在线客服
+            </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+
+<script>
+        function toggleFaq(id) {
+            const content = document.getElementById(`faq-content-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            // Check if already open
+            const isOpen = content.classList.contains('opacity-100');
+            
+            // Close all first (optional, for accordion effect)
+            document.querySelectorAll('[id^="faq-content-"]').forEach(el => {
+                el.style.maxHeight = '0';
+                el.classList.remove('opacity-100', 'mt-2');
+                el.classList.add('opacity-0');
+            });
+            document.querySelectorAll('[id^="faq-icon-"]').forEach(ic => {
+                ic.style.transform = 'rotate(0deg)';
+            });
+
+            if (!isOpen) {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.classList.remove('opacity-0');
+                content.classList.add('opacity-100', 'mt-2');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Active button visual feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.classList.add('active:scale-95');
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>我的模板 - AI 倒数本</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-variant": "#e4e2e4",
+                    "surface-tint": "#904d00",
+                    "primary": "#904d00",
+                    "surface": "#fcf8fb",
+                    "surface-bright": "#fcf8fb",
+                    "on-surface-variant": "#564334",
+                    "inverse-primary": "#ffb77d",
+                    "primary-fixed-dim": "#ffb77d",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-error": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "background": "#fcf8fb",
+                    "on-primary-container": "#623200",
+                    "on-background": "#1b1b1d",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#5d5f5f",
+                    "surface-container-low": "#f6f3f5",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-secondary-container": "#616365",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-surface": "#1b1b1d",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "surface-dim": "#dcd9dc",
+                    "primary-container": "#ff8c00",
+                    "secondary-container": "#dfdfe1",
+                    "outline-variant": "#ddc1ae",
+                    "inverse-surface": "#303032",
+                    "surface-container-high": "#eae7ea",
+                    "on-tertiary-container": "#3d3f3f",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "on-error-container": "#93000a",
+                    "outline": "#897362",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#ffdcc3",
+                    "secondary-fixed": "#e2e2e4",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "surface-container": "#f0edef",
+                    "tertiary-container": "#a9aaaa",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#2f1500",
+                    "secondary": "#5d5e60",
+                    "surface-container-highest": "#e4e2e4",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "inverse-on-surface": "#f3f0f2",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding": "20px",
+                    "gutter": "12px",
+                    "stack-gap-sm": "8px",
+                    "stack-gap-lg": "24px",
+                    "unit": "4px",
+                    "stack-gap-md": "16px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        border: 0.5px solid rgba(229, 229, 231, 0.5);
+      }
+      .safe-pb {
+        padding-bottom: env(safe-area-inset-bottom);
+      }
+      body {
+        background-color: #F5F5F7; /* Level 0 Background per style guidance */
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background selection:bg-primary-fixed/30">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl"><div class="flex justify-between items-center h-14 px-container-padding"><button aria-label="返回" class="active:scale-95 transition-transform text-primary"><span class="material-symbols-outlined">arrow_back_ios</span></button><h1 class="font-headline-sm text-headline-sm text-primary tracking-tight">我的模板</h1><div class="flex gap-4"><button class="active:scale-95 transition-transform text-primary"></button><button class="active:scale-95 transition-transform text-primary"></button></div></div></header>
+<main class="pt-20 min-h-screen px-container-padding">
+<!-- Search & Filter Area -->
+<div class="mb-stack-gap-lg">
+<div class="flex gap-gutter overflow-x-auto pb-2 no-scrollbar"><span class="px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md whitespace-nowrap shadow-sm">全部</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap">热门</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap">极简</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap">风景</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap">动漫</span>
+<span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap">二次元</span><span class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap">二次元</span></div>
+</div>
+<!-- Template Grid (Visible State) -->
+<div class="grid grid-cols-2 gap-gutter" id="template-grid">
+<!-- Template Card 1 -->
+<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="A serene cosmic background for a countdown timer featuring soft purple and blue nebulae with crystalline stars. The aesthetic is emotionally minimalist and clean, with high-key lighting that feels premium and modern, following a serene and sophisticated brand personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRfG1FRiIJGBM6B3rD4e-sdPmhg_1p3xjl82HkjuY3w697_zp9QvUxQwhAtJrVOR6FpLUtjKOt7t5xxxMcO0vdXV8YZ0EArfMUu9bu2UtnYn005NdFN44Gz1Kyfi50ZSUZfGTdrQvH61k4TTMTf41g-OnzxQqbxm7DTuPguFvel4YAxUyzfMBMSEtGqtKPUBRalcTsj1ckowsNhyA0WtyJRqEALZ6QrhdNyHNCUUAKO3XFYTW0RMjxEdvGal_ELI7zc_DNw4BCPL8" style="transform: scale(1) translate(0px, 0px); transition: transform 0.5s ease-out;">
+<div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black/20"></div>
+<span class="absolute top-2 right-2 px-2 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg backdrop-blur-md">PRO</span>
+</div>
+<div class="p-3">
+<h3 class="font-label-md text-label-md text-on-surface truncate">星辰大海</h3>
+<p class="text-[10px] text-on-surface-variant mt-1">最近使用</p>
+</div>
+</div>
+<!-- Template Card 2 -->
+<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="A minimalist floral photography background featuring a single soft orange tulip against a clean, off-white studio wall. The lighting is soft and diffused, creating a calm, high-end atmosphere that aligns with a premium emotional aesthetic for countdown events." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTbfqMyIKE1Ro6KhIraVmJ0V2rnskMUvh9XyFV9BN6n1j2KmiamsJBRC4nO09_lztfEq3COPahs7EBFcUcrBy7oeW5cxDCUKX78hk1N2bXZx1E74A2BUT8PqdVCCNZ3hxhiGTBAf6GG99by9bjmG3KuYDpO-S4_7axsuxOOvN-ZEU-RUAIfQob6XYz-st-sIvy2Hi40Mq93zFbNqCsPLllEAenv7PjWDQS7rLjM5m9M3jPN_diOpGaFPQ6-lxoGaBebpxhHuyho5c" style="transform: scale(1) translate(0px, 0px); transition: transform 0.5s ease-out;">
+</div>
+<div class="p-3">
+<h3 class="font-label-md text-label-md text-on-surface truncate">暖春花开</h3>
+<p class="text-[10px] text-on-surface-variant mt-1">2天前保存</p>
+</div>
+</div>
+<!-- Template Card 3 -->
+<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="A sophisticated abstract background with geometric architectural lines in monochromatic gray tones. The visual style is inspired by structural minimalism, providing a neutral yet premium canvas for digital countdown displays, emphasizing whitespace and functional flexibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjVNFqPP2U8Gu_SoxLAzIy2U6kaohk52O6A7js_IZn4u45YeZQ0u8FkVXb0I_AeD3cQiZhpL3TDJlMMzMGxEWJERlJy05zEspq-t1gx4zOgOIEOO7PQUDymY_wAIsF_5cRSBuE_8tBq1AOxSZgzAd_4hf1DrBrBzFSvjRhvax6C4XkgsKb1XH_w68dkXMPNty0QAAkfCUGps_y1neo2eAVrY-7NmhulUtQhSRyF3zcaeX_Y0rqjfyX3XlaPrumQkMtfn-YUbuJcUI">
+</div>
+<div class="p-3">
+<h3 class="font-label-md text-label-md text-on-surface truncate">现代主义</h3>
+<p class="text-[10px] text-on-surface-variant mt-1">收藏</p>
+</div>
+</div>
+<!-- Template Card 4 -->
+<div class="group relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 active:scale-[0.98]">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="A breathtaking landscape of mist-covered mountains during the golden hour, featuring soft oranges and muted blues. The image is designed as a serene and sophisticated backdrop for a mindfulness app, using a wide color palette that feels emotional and premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPsTv3zKhajPMr6M6dN1xgH_YdzBWmmaxjLGbEcGVkkc79oroWjpoEV2EWTf7bvEaEELg4QINiczUR-f-KgIps-F97Qz_4F1SM-ojL1q8pFAYInB2rkCEu7O0pIAM_VEzSyV_KLcuHxRAsYNsxdI4CgHtdNyguTDOORtJDZPS1o0LvjpGkogN7mNJC2wKnvCWiQbNwthJHBHJsWpTykTo-tQcRo9VVVOsPexqhKP7nFBzGQi-Nmb3k3L3cMfM2_mAhVL1M0SH0xY">
+<span class="absolute top-2 right-2 px-2 py-1 bg-primary-container text-on-primary-container font-label-sm text-label-sm rounded-lg backdrop-blur-md">PRO</span>
+</div>
+<div class="p-3">
+<h3 class="font-label-md text-label-md text-on-surface truncate">远山如黛</h3>
+<p class="text-[10px] text-on-surface-variant mt-1">常用模板</p>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default, can be toggled) -->
+<div class="flex-col items-center justify-center py-32 text-center hidden" id="empty-state">
+<div class="w-48 h-48 mb-stack-gap-md relative">
+<div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl"></div>
+<span class="material-symbols-outlined text-[80px] text-outline-variant/60">dashboard_customize</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface-variant">暂无模板</h2>
+<p class="font-body-md text-body-md text-on-surface-variant/60 mt-2">在这里收藏您最喜欢的倒数背景</p>
+<button class="mt-stack-gap-lg px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md shadow-lg shadow-primary/20 active:scale-95 transition-all">
+                前往探索
+            </button>
+</div>
+</main>
+<!-- FAB: Create New -->
+
+<!-- Bottom Navigation Bar (Based on JSON) -->
+
+<script>
+        // Toggle logic for empty state demo (purely for demonstration)
+        const grid = document.getElementById('template-grid');
+        const empty = document.getElementById('empty-state');
+        
+        // This is a simple interaction to show the empty state when search icon is clicked
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.querySelector('.material-symbols-outlined')?.innerText === 'search') {
+                btn.addEventListener('click', () => {
+                    grid.classList.toggle('hidden');
+                    empty.classList.toggle('hidden');
+                });
+            }
+        });
+
+        // Simple parallax effect on cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                const img = card.querySelector('img');
+                if(img) {
+                    img.style.transform = `scale(1.1) translate(${x * 10}px, ${y * 10}px)`;
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if(img) {
+                    img.style.transform = `scale(1) translate(0, 0)`;
+                    img.style.transition = 'transform 0.5s ease-out';
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

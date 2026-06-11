@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>选择背景模板 - AI 智能创建</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#904d00",
+                        "secondary-container": "#dfdfe1",
+                        "primary-container": "#ff8c00",
+                        "tertiary-container": "#a9aaaa",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3f5",
+                        "primary-fixed-dim": "#ffb77d",
+                        "surface-tint": "#904d00",
+                        "outline-variant": "#ddc1ae",
+                        "on-secondary-fixed-variant": "#454749",
+                        "on-primary-container": "#623200",
+                        "secondary-fixed": "#e2e2e4",
+                        "on-surface-variant": "#564334",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1b1b1d",
+                        "on-surface": "#1b1b1d",
+                        "surface-container-highest": "#e4e2e4",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#616365",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-bright": "#fcf8fb",
+                        "on-tertiary-container": "#3d3f3f",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary": "#5d5f5f",
+                        "surface-variant": "#e4e2e4",
+                        "inverse-primary": "#ffb77d",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "inverse-surface": "#303032",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-high": "#eae7ea",
+                        "surface": "#fcf8fb",
+                        "on-secondary": "#ffffff",
+                        "background": "#fcf8fb",
+                        "primary-fixed": "#ffdcc3",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#dcd9dc",
+                        "surface-container": "#f0edef",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "secondary": "#5d5e60",
+                        "outline": "#897362",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary-fixed": "#1a1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-gap-md": "16px",
+                        "gutter": "12px",
+                        "container-padding": "20px",
+                        "stack-gap-sm": "8px",
+                        "stack-gap-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior-y: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex flex-col overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-container-padding h-14 max-w-md mx-auto left-0 right-0">
+<button class="active:scale-95 transition-transform text-primary" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-on-surface">选择背景模板</h1>
+<button class="active:scale-95 transition-transform text-primary flex items-center justify-center w-10 h-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</button>
+</header>
+<main class="flex-1 mt-14 pb-32 max-w-md mx-auto w-full px-container-padding pt-6 space-y-stack-gap-lg">
+<section class="relative aspect-square w-full rounded-3xl overflow-hidden shadow-sm bg-surface-container border border-outline-variant/20">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A serene landscape of rolling hills under a vibrant orange and pink sunset. The sky is filled with soft, wispy clouds reflecting the warm golden hour light." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDftJZceEKeyBQwCsu_ykGgF1gVbhGWpW4jwjP1ipL0VeZM14mrmepiM1Ml9ejAIquhxgzeweOYg-ENnpIZQVaGWXUnmDRUQs-qfcsQUjH91VQAscsmu627pORctF06RZ2q9BQhWp1NVxzar1p2N9n_haBhbrWdgkc08GKfxFSJXAC-6ZKoC-KNuGK0csfW-uabA8v-aBONHGFsRva8edjRj3fPTxXdJ1mg6Vwywk0gNMfQzBYJYlX7kL8a4HOf8NJIOFlt8uCn4EM');"></div>
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute inset-0 flex flex-col items-center justify-between py-10 text-white">
+<div class="text-center space-y-1">
+<p class="font-label-md text-label-md tracking-widest opacity-80">今日 2026 / 06 / 09</p>
+<h2 class="font-headline-md text-headline-md">赛博城市</h2>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[120px] font-bold leading-none tracking-tight">37</span>
+<span class="font-headline-sm text-headline-sm -mt-2 opacity-90">天</span>
+</div>
+<div class="text-center space-y-2">
+<p class="font-label-md text-label-md opacity-80">目标日 / 2026年07月16日 周四</p>
+</div>
+</div>
+</section>
+<section class="space-y-4">
+<nav class="flex gap-4 overflow-x-auto hide-scrollbar -mx-container-padding px-container-padding"><button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">热门</button><button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">极简</button><button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">风景</button><button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">动漫</button><button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md">二次元</button></nav>
+<div class="grid grid-cols-2 gap-4"><div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer border-2 border-primary ring-2 ring-primary/20"><div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDftJZceEKeyBQwCsu_ykGgF1gVbhGWpW4jwjP1ipL0VeZM14mrmepiM1Ml9ejAIquhxgzeweOYg-ENnpIZQVaGWXUnmDRUQs-qfcsQUjH91VQAscsmu627pORctF06RZ2q9BQhWp1NVxzar1p2N9n_haBhbrWdgkc08GKfxFSJXAC-6ZKoC-KNuGK0csfW-uabA8v-aBONHGFsRva8edjRj3fPTxXdJ1mg6Vwywk0gNMfQzBYJYlX7kL8a4HOf8NJIOFlt8uCn4EM');"></div><div class="absolute inset-0 bg-black/20"></div><div class="absolute inset-0 flex flex-col items-center justify-center text-white"><span class="text-2xl font-bold">37</span><span class="text-[10px] opacity-80">赛博城市</span></div><div class="absolute bottom-2 left-2 right-2 flex justify-between items-center"><span class="text-white font-label-sm text-[10px] drop-shadow-md">霓虹幻梦</span><span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span></div></div><div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"><div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCxYhBS2z7nNhVPdTjY-GqRVSTL3HqdEUiPGb3wcuC79aQ7mbfqaJFGFplPtw9ZaHoPCppF9Q-5rAdndtcRX7CIaRGcoP0A1crsM8BWspPOIjAkIvlPAP_hVRi1saw4Luba9WvmKgQvb-932m094TOL6NFJWlpWVyAKWrotm7c-L2RcfR6BFtpDnAoem_V3LLzJGpecrGa9edGqCjqFwMyCls9HKN94yifzVkxKe9CGyw9aKsXgvU0X8U9Z5IF8l3q6rc2fmuizO8s');"></div><div class="absolute top-2 right-2 px-1.5 py-0.5 rounded-md flex items-center gap-0.5 bg-primary-container"><span class="material-symbols-outlined text-[10px] text-white" style="font-variation-settings: 'FILL' 1;">star</span><span class="text-white font-label-sm text-[10px] font-bold">Pro</span></div><div class="absolute inset-0 flex flex-col items-center justify-center text-white"><span class="text-2xl font-bold">37</span><span class="text-[10px] opacity-80">幻想世界</span></div><div class="absolute bottom-2 left-2"><span class="text-white font-label-sm text-[10px] drop-shadow-md">浮岛之诗</span></div></div><div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"><div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCKX5VELXoGzSszxAUUFjUr1TcZIUlZW7gK42Xcme8T8j9zaQX9YcpbaBzS1tRwU4Lpaj-lZumgvmTNBdFikMhTviyF7R1twrfp6DqHA5Nov4gIvcG5-nDmCoTGJ6fJGjZ0vwA1XV9T9BuTAvllW-gvK1O7JoXN1lvmGdfgmfQOvxaj9rL3dRqGgPybLmwcrzVRFGjuaM60m6G1vRkSV6EyjqTCab4bFgyPd8OM35hvCRXfzDkdwAt3LZNzsZnYjdwjafUahkqoNx4');"></div><div class="absolute inset-0 flex flex-col items-center justify-center text-white"><span class="text-2xl font-bold">37</span><span class="text-[10px] opacity-80">像素心情</span></div><div class="absolute bottom-2 left-2"><span class="text-white font-label-sm text-[10px] drop-shadow-md">复古治愈</span></div></div><div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300"><div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZv6_aazS7PP44EAlpIxHMfLYT9mO-pqMv8gh9hp75N7p28Tu1xLbhGRa5OEeYE3I-YmpCxpN0_zqhOTrUKhwKRoFDNdsDtPEpY4-vYWQoCJCDjO1D1sC_STD8Zg4btjhdAXMDnQNMvHzTmd6W2aIFxhJBIFLzfokXVEcEwNdH1MA3D9nLpd4GuGTsGtfvlXta6l_cuscCogjKFxm-sxKpdZqi6bnWpfHoIWgzyjPLrUOBT3m6-CKGG53dEFk4pU1fHoQ1n5i6iTY');"></div><div class="absolute top-2 right-2 px-1.5 py-0.5 rounded-md flex items-center gap-0.5 bg-primary-container"><span class="material-symbols-outlined text-[10px] text-white" style="font-variation-settings: 'FILL' 1;">star</span><span class="text-white font-label-sm text-[10px] font-bold">Pro</span></div><div class="absolute inset-0 flex flex-col items-center justify-center text-white"><span class="text-2xl font-bold">37</span><span class="text-[10px] opacity-80">虚拟偶像</span></div><div class="absolute bottom-2 left-2"><span class="text-white font-label-sm text-[10px] drop-shadow-md">星光舞台</span></div></div></div>
+</section>
+<section class="space-y-stack-gap-md">
+<button class="w-full flex items-center justify-between p-4 rounded-2xl bg-white border border-outline-variant/30 active:scale-[0.98] transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">image</span>
+<span class="font-body-md text-on-surface">选择本地图片背景</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<div class="p-4 rounded-2xl bg-white border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">edit_note</span>
+<textarea class="w-full border-none p-0 focus:ring-0 text-body-md text-on-surface-variant placeholder:text-outline/50 bg-transparent resize-none" placeholder="写一点关于这个日子的寄语吧..." rows="2"></textarea>
+</div>
+</section>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 max-w-md mx-auto z-50 px-container-padding pb-8 pt-4 bg-gradient-to-t from-background via-background/95 to-transparent">
+<div class="flex gap-4 items-center">
+<button class="flex-1 h-14 rounded-full font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/20 active:scale-95 transition-all bg-primary-container text-white">
+<span class="material-symbols-outlined">check</span>
+                保存模板
+            </button>
+<button class="w-14 h-14 rounded-full border border-primary text-primary flex items-center justify-center active:scale-95 transition-all">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</footer>
+<script>
+        document.querySelectorAll('.aspect-square.group').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.aspect-square.group').forEach(c => {
+                    c.classList.remove('border-2', 'border-primary', 'ring-2', 'ring-primary/20');
+                    const check = c.querySelector('.material-symbols-outlined[style*="check_circle"]');
+                    if(check) check.remove();
+                });
+                card.classList.add('border-2', 'border-primary', 'ring-2', 'ring-primary/20');
+                const footer = card.querySelector('.absolute.bottom-2.left-2.right-2') || card.querySelector('.absolute.bottom-2.left-2');
+                if(!card.querySelector('.material-symbols-outlined[style*="check_circle"]')) {
+                   const checkSpan = document.createElement('span');
+                   checkSpan.className = 'material-symbols-outlined text-white text-sm';
+                   checkSpan.style.fontVariationSettings = "'FILL' 1";
+                   checkSpan.textContent = 'check_circle';
+                   if(card.querySelector('.absolute.bottom-2.left-2.right-2')) {
+                       card.querySelector('.absolute.bottom-2.left-2.right-2').appendChild(checkSpan);
+                   } else {
+                       const wrapper = document.createElement('div');
+                       wrapper.className = 'absolute bottom-2 left-2 right-2 flex justify-between items-center';
+                       const originalLabel = card.querySelector('.font-label-sm');
+                       wrapper.appendChild(originalLabel.cloneNode(true));
+                       wrapper.appendChild(checkSpan);
+                       originalLabel.remove();
+                       card.appendChild(wrapper);
+                   }
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

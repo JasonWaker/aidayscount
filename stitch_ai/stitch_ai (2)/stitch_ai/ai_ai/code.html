@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>AI倒数日 - 倒数本详情页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#5d5f5f",
+                    "primary-fixed": "#ffdcc3",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "secondary-container": "#dfdfe1",
+                    "background": "#fcf8fb",
+                    "secondary-fixed": "#e2e2e4",
+                    "surface-container-low": "#f6f3f5",
+                    "surface-dim": "#dcd9dc",
+                    "on-primary-fixed": "#2f1500",
+                    "surface": "#fcf8fb",
+                    "on-surface": "#1b1b1d",
+                    "surface-variant": "#e4e2e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#ffb77d",
+                    "outline-variant": "#ddc1ae",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "surface-container-highest": "#e4e2e4",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "inverse-on-surface": "#f3f0f2",
+                    "on-surface-variant": "#564334",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "inverse-primary": "#ffb77d",
+                    "on-tertiary-container": "#3d3f3f",
+                    "secondary": "#5d5e60",
+                    "error-container": "#ffdad6",
+                    "tertiary-container": "#a9aaaa",
+                    "surface-tint": "#904d00",
+                    "on-secondary-container": "#616365",
+                    "surface-bright": "#fcf8fb",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "outline": "#897362",
+                    "inverse-surface": "#303032",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#eae7ea",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-background": "#1b1b1d",
+                    "primary": "#904d00",
+                    "on-tertiary": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container": "#f0edef",
+                    "on-primary-container": "#623200",
+                    "tertiary-fixed": "#e2e2e2",
+                    "primary-container": "#ff8c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-gap-lg": "24px",
+                    "container-padding": "20px",
+                    "gutter": "12px",
+                    "stack-gap-md": "16px",
+                    "stack-gap-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fb;
+            color: #1b1b1d;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(229, 229, 231, 0.5);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            bottom: 0;
+            width: 1.5px;
+            background: #e4e2e4;
+        }
+        .timeline-item:last-child .timeline-line::before {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Top Header -->
+<header class="relative h-[320px] overflow-hidden">
+<div class="absolute inset-0">
+<img alt="Header Cover" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvi6-1WYUgPsyp3cQrK5IN3aeJfHmQLBqfGCmeqhw9a73gRB8rlRT98UsNb8WO2agmI5mhlfBti-ewliJOK4yjE1YzaP8t_v9ALH_V56r6CmoAtl2U8fbgHht_C2ix7eWSvwcr_Ab5ytT4J16v_KWVc9DaCYjpoCvRvVHzrWaK965x2FbwVjiY0VpHUSm60Di6kBqgVQ42pCQzfcnnCkyBFVP2vmth2xEoT1WduCq3jQGJteqyE5ZDM3w">
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-surface"></div>
+</div>
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-container-padding h-14 bg-surface/40 backdrop-blur-xl">
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface/60 backdrop-blur-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">arrow_back_ios_new</span>
+</button>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface/60 backdrop-blur-md active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-on-surface">more_horiz</span>
+</button>
+</nav>
+<!-- Category Info Overlay -->
+<div class="absolute bottom-0 left-0 w-full px-container-padding pb-stack-gap-lg">
+<div class="glass-card rounded-xl p-stack-gap-md shadow-sm">
+<div class="flex items-center justify-between mb-unit">
+<h1 class="font-headline-md text-headline-md text-on-surface">学习本</h1>
+<div class="flex gap-stack-gap-sm">
+<span class="px-2 py-1 rounded bg-primary/10 text-primary font-label-sm text-[10px]">12 总计</span>
+<span class="px-2 py-1 rounded bg-secondary/10 text-secondary font-label-sm text-[10px]">8 进行中</span>
+</div>
+</div>
+<p class="text-on-surface-variant font-body-md mb-stack-gap-sm opacity-80">记录每一次成长与进步</p>
+<div class="h-[1px] w-full bg-outline-variant/20 mb-stack-gap-sm"></div>
+<div class="flex justify-between items-center">
+<span class="text-label-sm text-on-surface-variant">4 已完成</span>
+<span class="flex items-center text-primary font-label-md">
+<span class="material-symbols-outlined text-[16px] mr-1">auto_awesome</span>
+                        AI 洞察已更新
+                    </span>
+</div>
+</div>
+</div>
+</header>
+<main class="px-container-padding space-y-stack-gap-lg -mt-4 relative z-10">
+<!-- Stats Overview -->
+<section class="grid grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest border-[0.5px] border-outline-variant/30 rounded-xl p-stack-gap-md flex flex-col items-center text-center">
+<span class="text-on-surface-variant font-label-sm mb-unit">进行中</span>
+<span class="font-headline-md text-primary">8</span>
+</div>
+<div class="bg-surface-container-lowest border-[0.5px] border-outline-variant/30 rounded-xl p-stack-gap-md flex flex-col items-center text-center">
+<span class="text-on-surface-variant font-label-sm mb-unit">已完成</span>
+<span class="font-headline-md text-on-surface">4</span>
+</div>
+<div class="bg-surface-container-lowest border-[0.5px] border-outline-variant/30 rounded-xl p-stack-gap-md flex flex-col items-center text-center">
+<span class="text-on-surface-variant font-label-sm mb-unit">等待天数</span>
+<span class="font-headline-md text-on-surface">432</span>
+</div>
+</section>
+<!-- AI Insights (Pro) -->
+<section class="bg-gradient-to-br from-primary-fixed to-surface-container-lowest border-[0.5px] border-primary/20 rounded-xl p-stack-gap-md">
+<div class="flex items-center justify-between mb-stack-gap-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">insights</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">AI 分类洞察</h2><button class="flex items-center gap-1 text-primary font-label-md ml-2 hover:opacity-80 transition-opacity" onclick="const details = document.getElementById('ai-insights-details'); details.classList.toggle('hidden'); this.querySelector('.toggle-icon').textContent = details.classList.contains('hidden') ? 'expand_more' : 'expand_less';"><span class="material-symbols-outlined toggle-icon text-[18px]">expand_more</span>详情</button>
+</div>
+<span class="px-2 py-0.5 bg-primary text-on-primary font-label-sm rounded-full tracking-wider text-[10px]">PRO</span>
+</div>
+<div class="flex items-center justify-between gap-gutter">
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm">完成率</span>
+<span class="font-headline-sm text-on-surface">65%</span>
+</div>
+<div class="w-[1.5px] h-8 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm">平均周期</span>
+<span class="font-headline-sm text-on-surface">83天</span>
+</div>
+<div class="w-[1.5px] h-8 bg-outline-variant/30"></div>
+<div class="flex flex-col">
+<span class="text-on-surface-variant font-label-sm">活跃趋势</span>
+<span class="font-headline-sm text-primary">+20%</span>
+</div>
+</div><div class="hidden mt-stack-gap-md pt-stack-gap-md border-t border-primary/10 space-y-stack-gap-md animate-in fade-in slide-in-from-top-2 duration-300" id="ai-insights-details"><div class="space-y-2"><div class="flex justify-between items-center"><span class="text-label-sm text-on-surface-variant">时间分配</span><span class="text-label-sm text-primary">重点关注</span></div><div class="flex h-2 w-full rounded-full overflow-hidden bg-surface-variant"><div class="h-full bg-primary" style="width: 45%"></div><div class="h-full bg-primary/60" style="width: 30%"></div><div class="h-full bg-primary/30" style="width: 25%"></div></div><div class="flex gap-4 text-[10px] text-on-surface-variant/60"><span>● 基础巩固 45%</span><span>● 真题演练 30%</span><span>● 错题回顾 25%</span></div></div><div class="bg-surface/40 backdrop-blur-md p-3 rounded-lg border border-primary/5"><span class="text-label-sm text-on-surface-variant block mb-1">效率分析</span><p class="text-body-md text-on-surface leading-relaxed">您的复习效率在早间 8:00-10:00 达到峰值，建议将高难度数学逻辑训练安排在此时间段。当前德语词汇记忆速度提升了 15%。</p></div><div class="bg-primary/5 p-3 rounded-lg border border-primary/10"><div class="flex items-center gap-1.5 mb-1"><span class="material-symbols-outlined text-primary text-[16px]">lightbulb</span><span class="text-label-sm text-primary font-bold">AI 建议</span></div><p class="text-body-md text-on-surface-variant">根据您的进度，建议本周增加 2 小时的德语听力专项练习，以平衡当前的读写进度。考研数学建议开始第二轮强化复习。</p></div></div>
+</section>
+<!-- Event List -->
+<section>
+<div class="flex items-center justify-between mb-stack-gap-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">本分类事件</h2>
+<button class="flex items-center gap-1 text-on-surface-variant hover:opacity-80 transition-opacity">
+<span class="font-label-md">剩余天数</span>
+<span class="material-symbols-outlined text-[18px]">sort</span>
+</button>
+</div>
+<div class="space-y-stack-gap-md">
+<!-- Event Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden border-[0.5px] border-outline-variant/30 transition-all hover:shadow-md active:scale-[0.98]">
+<div class="absolute top-0 right-0 p-stack-gap-sm z-10">
+<button class="text-on-surface-variant/60 hover:text-on-surface">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex">
+<div class="w-24 h-full relative">
+<img alt="Event Thumbnail" class="w-full h-full object-cover grayscale-[0.3]" src="https://lh3.googleusercontent.com/aida/AP1WRLvi6-1WYUgPsyp3cQrK5IN3aeJfHmQLBqfGCmeqhw9a73gRB8rlRT98UsNb8WO2agmI5mhlfBti-ewliJOK4yjE1YzaP8t_v9ALH_V56r6CmoAtl2U8fbgHht_C2ix7eWSvwcr_Ab5ytT4J16v_KWVc9DaCYjpoCvRvVHzrWaK965x2FbwVjiY0VpHUSm60Di6kBqgVQ42pCQzfcnnCkyBFVP2vmth2xEoT1WduCq3jQGJteqyE5ZDM3w">
+<div class="absolute inset-0 bg-primary/10"></div>
+</div>
+<div class="flex-1 p-stack-gap-md">
+<div class="flex justify-between items-start mb-unit">
+<h3 class="font-headline-sm text-on-surface">考研上岸计划</h3>
+<span class="text-primary font-bold text-headline-sm">129 <span class="text-label-sm font-normal text-on-surface-variant">天</span></span>
+</div>
+<div class="flex items-center gap-1.5 mb-stack-gap-md text-on-surface-variant text-[12px] bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">magic_button</span>
+<p class="truncate">AI 洞察: 今天适合完成数学真题训练</p>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span class="">完成进度</span>
+<span class="">72%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 72%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden border-[0.5px] border-outline-variant/30 transition-all hover:shadow-md active:scale-[0.98]">
+<div class="absolute top-0 right-0 p-stack-gap-sm z-10">
+<button class="text-on-surface-variant/60 hover:text-on-surface">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex">
+<div class="w-24 h-full relative">
+<div class="w-full h-full bg-secondary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[32px]">menu_book</span>
+</div>
+</div>
+<div class="flex-1 p-stack-gap-md">
+<div class="flex justify-between items-start mb-unit">
+<h3 class="font-headline-sm text-on-surface">德语B1等级考</h3>
+<span class="text-on-surface font-bold text-headline-sm">45 <span class="text-label-sm font-normal text-on-surface-variant">天</span></span>
+</div>
+<div class="flex items-center gap-1.5 mb-stack-gap-md text-on-surface-variant text-[12px] bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">magic_button</span>
+<p class="truncate">AI 洞察: 建议复习第二单元被动语态</p>
+</div>
+<div class="space-y-1.5">
+<div class="flex justify-between text-label-sm text-on-surface-variant">
+<span class="">完成进度</span>
+<span class="">30%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full opacity-60" style="width: 30%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Life Timeline -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-stack-gap-md">人生时间轴</h2>
+<div class="space-y-0 relative pl-4">
+<div class="timeline-item pb-stack-gap-lg relative timeline-line">
+<div class="absolute left-[-11px] top-1.5 w-3 h-3 rounded-full bg-primary border-4 border-surface shadow-sm"></div>
+<div class="pl-stack-gap-md">
+<span class="text-label-sm text-on-surface-variant">2026-08-01</span>
+<div class="flex justify-between items-center mt-unit">
+<p class="font-body-lg text-on-surface">考研考试</p>
+<span class="text-primary font-label-md">剩余 129 天</span>
+</div>
+</div>
+</div>
+<div class="timeline-item pb-stack-gap-lg relative timeline-line">
+<div class="absolute left-[-11px] top-1.5 w-3 h-3 rounded-full bg-secondary border-4 border-surface shadow-sm"></div>
+<div class="pl-stack-gap-md">
+<span class="text-label-sm text-on-surface-variant">2025-11-15</span>
+<div class="flex justify-between items-center mt-unit">
+<p class="font-body-lg text-on-surface">德语B1等级考</p>
+<span class="text-on-surface-variant font-label-md">剩余 45 天</span>
+</div>
+</div>
+</div>
+<div class="timeline-item relative timeline-line">
+<div class="absolute left-[-11px] top-1.5 w-3 h-3 rounded-full bg-outline-variant border-4 border-surface shadow-sm"></div>
+<div class="pl-stack-gap-md">
+<span class="text-label-sm text-on-surface-variant">2025-09-10</span>
+<div class="flex justify-between items-center mt-unit">
+<p class="font-body-lg text-on-surface-variant">开学注册</p>
+<span class="text-on-surface-variant font-label-md">已结束</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<button class="fixed right-6 w-14 h-14 rounded-full bg-primary text-on-primary shadow-xl flex items-center justify-center active:scale-90 transition-transform z-50 z-[100] mb-safe bottom-0"><span class="material-symbols-outlined text-[32px]">add</span></button>
+<!-- Bottom Navigation Bar -->
+<script>
+        // Simple touch interaction for cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('touchstart', () => card.classList.add('scale-[0.98]'));
+            card.addEventListener('touchend', () => card.classList.remove('scale-[0.98]'));
+        });
+    </script>
+</body></html>

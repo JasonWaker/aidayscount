@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#dcd9dc",
+                "primary-fixed-dim": "#ffb77d",
+                "on-primary-fixed-variant": "#6e3900",
+                "tertiary-fixed": "#e2e2e2",
+                "surface-container": "#f0edef",
+                "secondary-fixed": "#e2e2e4",
+                "tertiary-container": "#a9aaaa",
+                "surface-container-highest": "#e4e2e4",
+                "inverse-surface": "#303032",
+                "tertiary": "#5d5f5f",
+                "outline": "#897362",
+                "surface-container-lowest": "#ffffff",
+                "secondary-fixed-dim": "#c6c6c8",
+                "error": "#ba1a1a",
+                "on-secondary": "#ffffff",
+                "primary-container": "#ff8c00",
+                "on-tertiary-fixed-variant": "#454747",
+                "surface-variant": "#e4e2e4",
+                "surface-tint": "#904d00",
+                "on-secondary-fixed": "#1a1c1d",
+                "surface-container-high": "#eae7ea",
+                "primary": "#904d00",
+                "surface-bright": "#fcf8fb",
+                "secondary-container": "#dfdfe1",
+                "on-primary": "#ffffff",
+                "surface": "#fcf8fb",
+                "on-background": "#1b1b1d",
+                "on-surface": "#1b1b1d",
+                "secondary": "#5d5e60",
+                "on-secondary-container": "#616365",
+                "error-container": "#ffdad6",
+                "on-tertiary": "#ffffff",
+                "on-tertiary-fixed": "#1a1c1c",
+                "on-surface-variant": "#564334",
+                "primary-fixed": "#ffdcc3",
+                "surface-container-low": "#f6f3f5",
+                "on-tertiary-container": "#3d3f3f",
+                "on-primary-fixed": "#2f1500",
+                "inverse-primary": "#ffb77d",
+                "on-primary-container": "#623200",
+                "on-error": "#ffffff",
+                "background": "#fcf8fb",
+                "inverse-on-surface": "#f3f0f2",
+                "outline-variant": "#ddc1ae",
+                "on-secondary-fixed-variant": "#454749",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#c6c6c7"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "3xl": "1.5rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-gap-md": "16px",
+                "unit": "4px",
+                "stack-gap-sm": "8px",
+                "gutter": "12px",
+                "stack-gap-lg": "24px",
+                "container-padding": "20px"
+            },
+            "fontFamily": {
+                "body-lg": ["Inter"],
+                "label-sm": ["Inter"],
+                "body-md": ["Inter"],
+                "display-lg": ["Plus Jakarta Sans"],
+                "headline-sm": ["Plus Jakarta Sans"],
+                "headline-lg-mobile": ["Plus Jakarta Sans"],
+                "headline-md": ["Plus Jakarta Sans"],
+                "headline-lg": ["Plus Jakarta Sans"],
+                "label-md": ["Inter"]
+            },
+            "fontSize": {
+                "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .modal-animate-in {
+            animation: modal-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes modal-in {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden">
+<!-- Static Background Content -->
+<main class="px-container-padding pt-16 flex flex-col items-center justify-center blur-sm opacity-50">
+<div class="w-full max-w-sm space-y-stack-gap-lg">
+<div class="h-48 w-full bg-surface-container rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-5xl">event</span>
+</div>
+<div class="space-y-stack-gap-sm">
+<div class="h-12 w-full bg-surface-container rounded-lg"></div>
+<div class="h-12 w-full bg-surface-container rounded-lg"></div>
+</div>
+</div>
+</main>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xl flex items-center justify-center p-6" id="backdrop">
+<!-- Modal Container -->
+<div class="w-full max-w-[360px] bg-white rounded-3xl flex flex-col shadow-2xl overflow-hidden modal-animate-in relative" id="modalContainer" onclick="event.stopPropagation()">
+<!-- Header -->
+<header class="pt-6 px-6 pb-4 flex items-center justify-between">
+<h1 class="text-headline-sm font-semibold text-on-surface">选择图标</h1>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors" id="closeBtn">
+<span class="material-symbols-outlined text-secondary">close</span>
+</button>
+</header>
+<!-- Search Bar -->
+<div class="px-6 mb-4">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-secondary/60 text-xl">search</span>
+<input class="w-full h-12 pl-11 pr-4 bg-gray-50 border-none rounded-2xl text-body-md placeholder:text-secondary/40 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="搜索图标..." type="text">
+</div>
+</div>
+<!-- Category Tabs -->
+<div class="flex gap-2 overflow-x-auto px-6 mb-5 no-scrollbar">
+<button class="px-5 py-2 bg-primary text-on-primary rounded-full text-label-md font-semibold whitespace-nowrap">常用</button>
+<button class="px-5 py-2 text-on-surface-variant hover:bg-gray-50 rounded-full text-label-md font-medium whitespace-nowrap transition-colors">生活</button>
+<button class="px-5 py-2 text-on-surface-variant hover:bg-gray-50 rounded-full text-label-md font-medium whitespace-nowrap transition-colors">旅行</button>
+<button class="px-5 py-2 text-on-surface-variant hover:bg-gray-50 rounded-full text-label-md font-medium whitespace-nowrap transition-colors">工作</button>
+<button class="px-5 py-2 text-on-surface-variant hover:bg-gray-50 rounded-full text-label-md font-medium whitespace-nowrap transition-colors">纪念日</button>
+</div>
+<!-- Icon Grid (Scrollable) -->
+<div class="px-6 pb-6 overflow-y-auto max-h-[340px]">
+<div class="icon-grid" id="iconContainer">
+<!-- Selected Icon -->
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-primary/10 border-2 border-primary shadow-sm cursor-pointer transition-all active:scale-95" data-selected="true">
+<span class="material-symbols-outlined text-primary text-2xl">star</span>
+</div>
+<!-- Other Icons -->
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">favorite</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">flight</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">work</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">cake</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">home</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">redeem</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">pets</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">restaurant</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">fitness_center</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">school</span>
+</div>
+<div class="icon-item aspect-square flex items-center justify-center rounded-2xl bg-gray-50 hover:bg-gray-100 cursor-pointer transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary text-2xl">movie</span>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-6 pt-2">
+<button class="w-full h-14 bg-primary text-white text-lg font-semibold rounded-2xl shadow-lg shadow-primary/20 hover:brightness-105 active:scale-[0.98] transition-all flex items-center justify-center" id="confirmBtn">
+                    确定
+                </button>
+</div>
+</div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.icon-item');
+            const backdrop = document.getElementById('backdrop');
+            const closeBtn = document.getElementById('closeBtn');
+            const confirmBtn = document.getElementById('confirmBtn');
+
+            // Icon selection interaction
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    // Reset all
+                    items.forEach(i => {
+                        i.classList.remove('bg-primary/10', 'border-primary', 'border-2', 'shadow-sm');
+                        i.classList.add('bg-gray-50');
+                        i.querySelector('span').classList.replace('text-primary', 'text-secondary');
+                    });
+
+                    // Set selected
+                    item.classList.remove('bg-gray-50');
+                    item.classList.add('bg-primary/10', 'border-primary', 'border-2', 'shadow-sm');
+                    item.querySelector('span').classList.replace('text-secondary', 'text-primary');
+                    
+                    if (window.navigator.vibrate) window.navigator.vibrate(10);
+                });
+            });
+
+            // Tab visual toggle
+            const tabs = document.querySelectorAll('button.whitespace-nowrap');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => {
+                        t.classList.remove('bg-primary', 'text-on-primary', 'font-semibold');
+                        t.classList.add('text-on-surface-variant', 'font-medium');
+                    });
+                    tab.classList.remove('text-on-surface-variant', 'font-medium');
+                    tab.classList.add('bg-primary', 'text-on-primary', 'font-semibold');
+                });
+            });
+
+            const closeAction = () => {
+                const modal = document.getElementById('modalContainer');
+                modal.style.transition = 'all 0.25s ease-in';
+                modal.style.opacity = '0';
+                modal.style.transform = 'scale(0.9) translateY(20px)';
+                backdrop.style.opacity = '0';
+                backdrop.style.transition = 'opacity 0.25s ease-in';
+                setTimeout(() => {
+                    console.log('Modal Closed');
+                }, 250);
+            };
+
+            backdrop.addEventListener('click', closeAction);
+            closeBtn.addEventListener('click', closeAction);
+            confirmBtn.addEventListener('click', () => {
+                console.log('Confirmed Selection');
+                closeAction();
+            });
+        });
+    </script>
+</body></html>

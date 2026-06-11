@@ -1,0 +1,441 @@
+<!DOCTYPE html><html class="light" lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>新建事件 - Cherished Moments</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Design System Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "primary": "#904d00",
+                    "surface-bright": "#fcf8fb",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-container-highest": "#e4e2e4",
+                    "on-error-container": "#93000a",
+                    "secondary-container": "#dfdfe1",
+                    "surface-container": "#f0edef",
+                    "secondary": "#5d5e60",
+                    "tertiary": "#5d5f5f",
+                    "background": "#fcf8fb",
+                    "surface-dim": "#dcd9dc",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1b1b1d",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#897362",
+                    "on-primary-container": "#623200",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#ffb77d",
+                    "surface-container-low": "#f6f3f5",
+                    "surface-variant": "#e4e2e4",
+                    "on-secondary-container": "#616365",
+                    "surface-container-high": "#eae7ea",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#ddc1ae",
+                    "inverse-surface": "#303032",
+                    "tertiary-container": "#a9aaaa",
+                    "primary-fixed": "#ffdcc3",
+                    "on-tertiary-container": "#3d3f3f",
+                    "inverse-primary": "#ffb77d",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-secondary": "#ffffff",
+                    "inverse-on-surface": "#f3f0f2",
+                    "secondary-fixed": "#e2e2e4",
+                    "surface": "#fcf8fb",
+                    "primary-container": "#ff8c00",
+                    "on-surface-variant": "#564334",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-background": "#1b1b1d",
+                    "on-primary-fixed": "#2f1500",
+                    "surface-tint": "#904d00",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-gap-sm": "8px",
+                    "stack-gap-lg": "24px",
+                    "container-padding": "20px",
+                    "stack-gap-md": "16px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "600" }],
+                    "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "600" }],
+                    "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                    "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "body-md": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+                    "body-lg": ["17px", { "lineHeight": "26px", "fontWeight": "400" }],
+                    "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F5F5F7;
+            color: #1b1b1d;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            min-height: 100dvh;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .ios-list-group {
+            background: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .ios-list-row {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.5px solid #E5E5E7;
+        }
+        .ios-list-row:last-child {
+            border-bottom: none;
+        }
+        .active-category {
+            background-color: #ff8c00 !important;
+            color: white !important;
+        }
+        .pro-tag {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #4B3300;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            margin-left: 6px;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+        }
+        .ios-switch {
+            position: relative;
+            display: inline-block;
+            width: 51px;
+            height: 31px;
+        }
+        .ios-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e9e9ea;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 27px;
+            width: 27px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+        }
+        input:checked + .slider {
+            background-color: #34C759;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+        .animated-gradient {
+            background: linear-gradient(-45deg, #ff8c00, #ffb77d, #ffecd2, #fc6076);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .collapsible-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapsible-active .collapsible-content {
+            max-height: 1000px;
+        }
+        .collapsible-active .chevron-icon {
+            transform: rotate(90deg);
+        }
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md pb-24">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-b-[0.5px] border-outline-variant/30 flex items-center justify-between px-container-padding h-14 w-full">
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-70 transition-opacity active:scale-95 flex items-center">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-semibold text-on-surface">新建时刻</h1>
+<button class="text-primary dark:text-primary-fixed-dim font-semibold hover:opacity-70 transition-opacity active:scale-95">
+        完成
+    </button>
+</header>
+<main class="px-container-padding pt-6 space-y-stack-gap-lg max-w-lg mx-auto">
+<!-- AI Entry Point - Always Visible -->
+<section class="relative overflow-hidden bg-white border-[0.5px] border-outline-variant/30 rounded-2xl p-5 shadow-sm active:scale-[0.98] transition-all cursor-pointer">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-[28px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-[17px] font-bold text-on-surface mb-1">AI 智能创建</h2>
+<p class="text-secondary text-label-md leading-tight opacity-80">描述您的时刻，让 AI 为您打理一切</p>
+</div>
+<span class="material-symbols-outlined text-outline ml-auto opacity-40" data-icon="chevron_right">chevron_right</span>
+</div>
+</section>
+<!-- Step 1: Basic Info - Always Visible -->
+<div class="space-y-stack-gap-sm">
+<h3 class="px-4 font-label-md text-secondary uppercase tracking-wider">第 1 步：基本信息</h3>
+<div class="ios-list-group shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+<div class="ios-list-row">
+<span class="text-body-md text-on-surface w-24 shrink-0">事件名称</span>
+<input class="flex-1 border-none focus:ring-0 p-0 text-body-md text-on-surface-variant bg-transparent placeholder:text-outline-variant" placeholder="例如：我的生日" type="text">
+</div>
+<div class="flex flex-col p-4 gap-4">
+<span class="text-body-md text-on-surface">分类选择</span>
+<div class="grid grid-cols-4 gap-3">
+<button class="active-category flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low transition-all" onclick="toggleCategory(this)">
+<span class="material-symbols-outlined mb-1" data-icon="favorite">favorite</span>
+<span class="text-[11px] font-medium">生活</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-secondary transition-all" onclick="toggleCategory(this)">
+<span class="material-symbols-outlined mb-1" data-icon="flight">flight</span>
+<span class="text-[11px] font-medium">旅行</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-secondary transition-all" onclick="toggleCategory(this)">
+<span class="material-symbols-outlined mb-1" data-icon="work">work</span>
+<span class="text-[11px] font-medium">工作</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 rounded-xl bg-surface-container-low text-secondary transition-all" onclick="toggleCategory(this)">
+<span class="material-symbols-outlined mb-1" data-icon="more_horiz">more_horiz</span>
+<span class="text-[11px] font-medium">其他</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 2: Date & Notes - Always Visible -->
+<div class="space-y-stack-gap-sm">
+<h3 class="px-4 font-label-md text-secondary uppercase tracking-wider">第 2 步：时间与备注</h3>
+<div class="ios-list-group shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+<div class="ios-list-row justify-between cursor-pointer active:bg-surface-container-low transition-colors">
+<span class="text-body-md text-on-surface">目标日期</span>
+<div class="flex items-center gap-2">
+<span class="text-primary font-medium">2024年12月25日</span>
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="calendar_month">calendar_month</span>
+</div>
+</div>
+<div class="p-4">
+<span class="text-body-md text-on-surface block mb-2">备注</span>
+<textarea class="w-full border-none focus:ring-0 p-0 text-body-md text-on-surface-variant bg-transparent placeholder:text-outline-variant resize-none" placeholder="记录下这一刻的期待..." rows="2"></textarea>
+</div>
+</div>
+</div>
+<!-- General Settings - Collapsible? (Kept as is but can be grouped) -->
+<div class="space-y-stack-gap-sm">
+<div class="ios-list-group shadow-[0_2px_8px_rgba(0,0,0,0.02)]">
+<div class="ios-list-row justify-between">
+<span class="text-body-md text-on-surface">置顶此事件</span>
+<label class="ios-switch">
+<input type="checkbox">
+<span class="slider"></span>
+</label>
+</div>
+<div class="ios-list-row justify-between cursor-pointer active:bg-surface-container-low transition-colors">
+<span class="text-body-md text-on-surface">定期提醒</span>
+<div class="flex items-center gap-1">
+<span class="text-secondary opacity-60">无</span>
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PRO Features - Collapsible -->
+<div class="space-y-stack-gap-sm collapsible-container" id="pro-features">
+<button class="flex items-center w-full px-4 text-left" onclick="toggleCollapsible('pro-features')">
+<h3 class="font-label-md text-secondary uppercase tracking-wider">Pro 功能区</h3>
+<span class="pro-tag">PRO</span>
+<span class="material-symbols-outlined ml-auto text-outline transition-transform chevron-icon" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="collapsible-content">
+<div class="mt-2 ios-list-group shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-primary/10">
+<!-- Icon Selection -->
+<div class="p-4 border-b border-outline-variant/10">
+<div class="flex items-center justify-between mb-3">
+<span class="text-body-md font-medium text-on-surface">事件图标选择</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="grid_view">grid_view</span>
+</div>
+<div class="flex gap-4 overflow-x-auto py-1 no-scrollbar">
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center border-2 border-primary">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="celebration">celebration</span>
+</div>
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="cake">cake</span>
+</div>
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="local_cafe">local_cafe</span>
+</div>
+<div class="w-10 h-10 shrink-0 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" data-icon="star">star</span>
+</div>
+</div>
+</div>
+<!-- Theme Color -->
+<div class="ios-list-row justify-between">
+<span class="text-body-md text-on-surface">事件主题颜色</span>
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-[#904d00] ring-2 ring-white ring-offset-1 ring-offset-[#904d00]/20"></div>
+<div class="w-5 h-5 rounded-full bg-[#ff8c00] opacity-40"></div>
+<div class="w-5 h-5 rounded-full bg-[#5d5e60] opacity-40"></div>
+<div class="w-5 h-5 rounded-full bg-primary-fixed-dim opacity-40"></div>
+<span class="material-symbols-outlined text-outline text-[18px] ml-1" data-icon="palette">palette</span>
+</div>
+</div>
+<!-- Other Pro rows simplified -->
+<div class="ios-list-row justify-between">
+<span class="text-body-md text-on-surface">卡片特效与背景</span>
+<div class="flex items-center gap-1">
+<span class="text-secondary opacity-60">动态渐变</span>
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="magic_button">magic_button</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Section - Collapsible -->
+<div class="space-y-stack-gap-sm collapsible-container" id="bg-settings">
+<button class="flex items-center w-full px-4 text-left" onclick="toggleCollapsible('bg-settings')">
+<h3 class="font-label-md text-secondary uppercase tracking-wider">背景设置</h3>
+<span class="material-symbols-outlined ml-auto text-outline transition-transform chevron-icon" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="collapsible-content">
+<div class="mt-2 ios-list-group shadow-[0_2px_8px_rgba(0,0,0,0.02)] p-4">
+<div class="grid gap-3 mb-4 grid-cols-3">
+<button class="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border border-outline-variant/30 text-on-surface active:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="photo_camera">photo_camera</span>
+<span class="font-medium text-[11px]">拍照</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border border-outline-variant/30 text-on-surface active:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="image">image</span>
+<span class="font-medium text-[11px]">相册</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-1 py-3 rounded-xl border border-outline-variant/30 text-on-surface active:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-medium text-[11px]">模板</span>
+</button>
+</div>
+<!-- Preview Area -->
+<div class="relative w-full aspect-video rounded-xl overflow-hidden bg-surface-container-highest group">
+<img alt="Preview Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWiqcz1lAoFng9ple__TOHnQ0tEoFx36APdiKVveRRZ2s4kx-H_D_Mmp2YDfeuNbMwv2h9a8Pxr0emml36x67POulOYp3ykoyPS1vZ4C-XKmiWRrD81GaGjKoVnGu0rqSycLpFVxaiTRUjAjsDFe8YK35y0duLJP0WoTchhYK9D751eEDPLvL_5ReDAxqyxUA2P1VKSl1opCgWMLn1ZtupyYxhyrNJ5oQxo-1c4OHlNxPd5LgUI24a7tBSkAX6LJa3aRz0EihGpWc">
+<div class="absolute bottom-3 left-3 text-white drop-shadow-md">
+<p class="text-[10px] mb-0.5 opacity-80">预览效果</p>
+<p class="text-[14px] font-bold tracking-tight leading-tight">距离 我的生日</p>
+<p class="text-[28px] font-bold leading-none">32 <span class="text-[10px]">天</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<div class="fixed bottom-0 left-0 right-0 p-container-padding bg-gradient-to-t from-background via-background/90 to-transparent z-40">
+<button class="w-full bg-[#ff8c00] text-white font-bold py-4 rounded-2xl shadow-lg active:scale-[0.98] transition-transform max-w-lg mx-auto block">
+        保存事件
+    </button>
+</div>
+<script>
+    function toggleCategory(btn) {
+        const siblings = btn.parentElement.querySelectorAll('button');
+        siblings.forEach(s => {
+            s.classList.remove('active-category', 'text-white');
+            s.classList.add('text-secondary');
+        });
+        btn.classList.add('active-category', 'text-white');
+        btn.classList.remove('text-secondary');
+        
+        btn.style.transform = 'scale(0.95)';
+        setTimeout(() => { btn.style.transform = 'scale(1)'; }, 100);
+    }
+
+    function toggleCollapsible(id) {
+        const container = document.getElementById(id);
+        container.classList.toggle('collapsible-active');
+    }
+
+    // Input focus styling for section headers
+    document.querySelectorAll('input, textarea').forEach(el => {
+        el.addEventListener('focus', () => {
+            const parent = el.closest('.space-y-stack-gap-sm');
+            if (parent) {
+                const title = parent.querySelector('h3');
+                if (title) title.classList.add('text-primary');
+            }
+        });
+        el.addEventListener('blur', () => {
+            const parent = el.closest('.space-y-stack-gap-sm');
+            if (parent) {
+                const title = parent.querySelector('h3');
+                if (title) title.classList.remove('text-primary');
+            }
+        });
+    });
+</script>
+
+
+</body></html>

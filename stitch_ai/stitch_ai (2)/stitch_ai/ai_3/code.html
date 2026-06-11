@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN" style="width: 390px; height: 971px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>Countdown Book - AI Countdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#e2e2e2",
+                    "secondary-fixed": "#e2e2e4",
+                    "surface-container-high": "#eae7ea",
+                    "inverse-on-surface": "#f3f0f2",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#ffb77d",
+                    "secondary-container": "#dfdfe1",
+                    "on-background": "#1b1b1d",
+                    "surface-container-low": "#f6f3f5",
+                    "primary-container": "#ff8c00",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "secondary": "#5d5e60",
+                    "primary-fixed": "#ffdcc3",
+                    "outline": "#897362",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#5d5f5f",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-surface-variant": "#564334",
+                    "on-tertiary-container": "#3d3f3f",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#dcd9dc",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#ddc1ae",
+                    "surface-container": "#f0edef",
+                    "surface-tint": "#904d00",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-surface": "#303032",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "primary": "#904d00",
+                    "on-primary-fixed": "#2f1500",
+                    "on-primary-container": "#623200",
+                    "tertiary-container": "#a9aaaa",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fcf8fb",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-surface": "#1b1b1d",
+                    "background": "#fcf8fb",
+                    "surface-container-highest": "#e4e2e4",
+                    "on-secondary-fixed-variant": "#454749",
+                    "primary-fixed-dim": "#ffb77d",
+                    "error": "#ba1a1a",
+                    "surface-variant": "#e4e2e4",
+                    "surface-bright": "#fcf8fb",
+                    "on-tertiary-container": "#3d3f3f",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "on-primary-fixed": "#2f1500",
+                    "tertiary": "#5d5f5f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "container-padding": "20px",
+                    "stack-gap-sm": "8px",
+                    "stack-gap-md": "16px",
+                    "unit": "4px",
+                    "stack-gap-lg": "24px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #F8F8F9;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .notion-card {
+            background: #ffffff;
+            border: 1px solid #EDEDEE;
+            transition: all 0.2s ease;
+        }
+        .notion-card:active {
+            transform: scale(0.98);
+            background-color: #F1F1F2;
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .safe-top {
+            padding-top: env(safe-area-inset-top);
+        }
+        .accent-glow {
+            box-shadow: 0 4px 12px rgba(255, 140, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-primary-fixed">
+<!-- TopAppBar Section -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-surface-container">
+<div class="flex items-center justify-between px-container-padding h-14 w-full"><div class="flex items-center gap-2"><h1 class="font-headline-sm text-headline-sm text-primary tracking-tight">倒数本</h1></div></div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-32 px-container-padding min-h-screen">
+<!-- Welcome Header -->
+<div class="mb-stack-gap-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">管理分类</h2>
+<p class="font-body-md text-on-surface-variant opacity-60">组织您的珍贵时刻</p>
+</div>
+<!-- Notion-inspired Grid -->
+<div class="grid grid-cols-2 gap-stack-gap-lg">
+<!-- Category: Life -->
+<div class="notion-card rounded-xl flex flex-col min-h-[130px] relative p-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</div>
+<span class="font-label-md text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-lg">8</span>
+</div>
+<div class="mt-auto">
+<h3 class="font-headline-sm text-[18px] text-on-surface mb-1">生活</h3>
+<p class="text-[10px] text-on-surface-variant opacity-40 uppercase tracking-wider">记录琐碎日常中的美好</p>
+</div>
+</div>
+<!-- Category: Study -->
+<div class="notion-card rounded-xl flex flex-col min-h-[130px] relative p-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined text-[22px]">school</span>
+</div>
+<span class="font-label-md text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-lg">5</span>
+</div>
+<div class="mt-auto">
+<h3 class="font-headline-sm text-[18px] text-on-surface mb-1">学习</h3>
+<p class="text-[10px] text-on-surface-variant opacity-40 uppercase tracking-wider">不积跬步，无以至千里</p>
+</div>
+</div>
+<!-- Category: Anniversary -->
+<div class="notion-card rounded-xl flex flex-col min-h-[130px] relative p-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center text-red-500">
+<span class="material-symbols-outlined text-[22px]">cake</span>
+</div>
+<span class="font-label-md text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-lg">3</span>
+</div>
+<div class="mt-auto">
+<h3 class="font-headline-sm text-[18px] text-on-surface mb-1">纪念日</h3>
+<p class="text-[10px] text-on-surface-variant opacity-40 uppercase tracking-wider">有些日子，值得铭记一生</p>
+</div>
+</div>
+<!-- Category: Work -->
+<div class="notion-card rounded-xl flex flex-col min-h-[130px] relative p-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center text-purple-500">
+<span class="material-symbols-outlined text-[22px]">work</span>
+</div>
+<span class="font-label-md text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-lg">12</span>
+</div>
+<div class="mt-auto">
+<h3 class="font-headline-sm text-[18px] text-on-surface mb-1">工作</h3>
+<p class="text-[10px] text-on-surface-variant opacity-40 uppercase tracking-wider">有条不紊，奔赴热爱</p>
+</div>
+</div>
+<!-- Category: Travel -->
+<div class="notion-card rounded-xl flex flex-col min-h-[130px] relative p-5">
+<div class="flex justify-between items-start mb-4">
+<div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined text-[22px]">explore</span>
+</div>
+<span class="font-label-md text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-lg">4</span>
+</div>
+<div class="mt-auto">
+<h3 class="font-headline-sm text-[18px] text-on-surface mb-1">旅行</h3>
+<p class="text-[10px] text-on-surface-variant opacity-40 uppercase tracking-wider">去看看这个世界吧</p>
+</div>
+</div>
+<!-- Add Category Button -->
+<button class="rounded-xl border-2 border-dashed border-outline-variant/50 flex flex-col items-center justify-center min-h-[130px] transition-all hover:bg-surface-variant/20 active:scale-95 group">
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary mb-2 text-3xl">add_circle</span>
+<span class="font-label-md text-label-md text-on-surface-variant">新增分类</span>
+</button>
+</div>
+<!-- Stats Visualization -->
+<section class="mt-stack-gap-lg">
+<div class="notion-card rounded-xl p-5">
+<div class="flex items-center justify-between mb-5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-xl">query_stats</span>
+<h4 class="font-headline-sm text-[18px] text-on-surface">时间分布</h4>
+</div>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-body-md text-on-surface-variant">本月已度过</span>
+<span class="font-headline-sm text-on-surface">65%</span>
+</div>
+<div class="h-2 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary transition-all duration-1000 ease-out accent-glow" id="progress-bar" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Section -->
+<nav class="fixed bottom-0 w-full z-50 bg-white/90 backdrop-blur-xl border-t border-surface-container safe-bottom"><div class="flex justify-around items-center px-4 py-3"><a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 transition-opacity hover:opacity-70 active:scale-90" href="#"><span class="material-symbols-outlined">home</span><span class="font-label-sm mt-1">首页</span></a><a class="flex flex-col items-center justify-center text-primary px-5 py-1 active:scale-90 relative" href="#"><div class="w-12 h-1 bg-primary rounded-full absolute top-0 -mt-0"></div><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">import_contacts</span><span class="font-label-sm mt-1 font-semibold">倒数本</span></a><a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 transition-opacity hover:opacity-70 active:scale-90" href="#"><span class="material-symbols-outlined">person</span><span class="font-label-sm mt-1">我的</span></a></div></nav>
+<!-- Floating Action Button -->
+
+<script>
+        // Simple animation for progress bar on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const progress = document.getElementById('progress-bar');
+            if(progress) {
+                setTimeout(() => {
+                    progress.style.width = '65%';
+                }, 400);
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>

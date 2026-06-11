@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>所有计划 - AI Countdown</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-container": "#ff8c00",
+                    "inverse-primary": "#ffb77d",
+                    "on-primary-fixed": "#2f1500",
+                    "outline-variant": "#ddc1ae",
+                    "primary": "#904d00",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "surface-container-high": "#eae7ea",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#5d5f5f",
+                    "secondary": "#5d5e60",
+                    "inverse-on-surface": "#f3f0f2",
+                    "primary-fixed": "#ffdcc3",
+                    "secondary-container": "#dfdfe1",
+                    "inverse-surface": "#303032",
+                    "on-secondary-fixed-variant": "#454749",
+                    "background": "#fcf8fb",
+                    "primary-fixed-dim": "#ffb77d",
+                    "outline": "#897362",
+                    "on-surface-variant": "#564334",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#a9aaaa",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-container": "#3d3f3f",
+                    "on-surface": "#1b1b1d",
+                    "tertiary-fixed": "#e2e2e2",
+                    "on-background": "#1b1b1d",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#616365",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#fcf8fb",
+                    "surface": "#fcf8fb",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "secondary-fixed": "#e2e2e4",
+                    "surface-container-highest": "#e4e2e4",
+                    "surface-tint": "#904d00",
+                    "surface-container": "#f0edef",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#dcd9dc",
+                    "on-primary-container": "#623200",
+                    "surface-variant": "#e4e2e4",
+                    "surface-container-low": "#f6f3f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-gap-md": "16px",
+                    "unit": "4px",
+                    "container-padding": "20px",
+                    "gutter": "12px",
+                    "stack-gap-lg": "24px",
+                    "stack-gap-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fb;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .badge-pinned {
+            background: linear-gradient(135deg, #ff8c00, #ffb77d);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-high/80 backdrop-blur-xl border-b border-outline-variant/30 flex items-center px-container-padding h-14">
+<button class="active:scale-95 duration-200 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-size: 24px;">arrow_back</span>
+</button>
+<h1 class="ml-4 font-headline-sm text-headline-sm text-on-surface">所有计划</h1>
+</header>
+<!-- Content Canvas -->
+<main class="pt-14 pb-safe min-h-screen">
+<!-- Category Filter Chips -->
+<div class="sticky top-14 z-40 bg-surface/80 backdrop-blur-md py-4">
+<div class="flex overflow-x-auto px-container-padding gap-gutter custom-scrollbar">
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all">全部</button>
+<button class="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all">生活</button>
+<button class="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all">纪念日</button>
+<button class="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all">工作</button>
+<button class="px-5 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all">旅行</button>
+</div>
+</div>
+<!-- Plans List -->
+<div class="px-container-padding flex flex-col gap-stack-gap-md mt-2">
+<!-- Pinned Item 1 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-transform duration-300" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);">
+<div class="flex items-center p-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A warm, soft-focus photograph of a birthday celebration scene featuring a small cake with a single glowing candle on a wooden table. The lighting is golden and intimate, evoking a sense of deep affection and nostalgic warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7XDmxQ7HMiN9Rgmfp1uTTg8uEXcr7X1xUcD9MFKpGYO2baqVQVAikKS3D0Q8KmZbmUFpLTM40snFBNwWdZjDbUMikCclgxecPAa5BfjRjAYJMi9UMgiCZDK6U_DblZvnO6N4PjI543e1i-m9OJon9z4uG700Di7uVct_b4PfS2x7_Zu21H8C6snvrFXh-ZrALnvrMWjYF1EY2cf73bzdgFQdCtIMlDmaN_DlC7VAVR92TaIKoR2TRBcj-jFBAdxBogdQAnXdVhz0">
+</div>
+<div class="ml-4 flex-grow pr-2">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full badge-pinned text-[10px] text-white font-bold tracking-wider">置顶</span>
+<h3 class="font-headline-sm text-[16px] text-on-surface">妈妈生日</h3>
+</div>
+<p class="text-on-surface-variant font-label-md text-label-sm italic opacity-80">“那是爱开始萌芽的日子...”</p>
+</div>
+<div class="shrink-0 flex flex-col items-end"><div class="flex items-baseline gap-1"><span class="text-on-surface-variant font-label-sm">还有</span><span class="text-primary-container font-display-lg text-[28px] leading-none">15</span><span class="text-on-surface-variant font-label-sm">天</span></div><span class="text-[10px] text-on-surface-variant opacity-60 mt-1">期待那一刻的到来</span></div>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-transform duration-300" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;">
+<div class="flex items-center p-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A serene landscape of a snow-capped mountain peak touching a clear blue morning sky. The lighting is crisp and cool." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN9wU_CJdO5d9wdtfveOr-8hQ576eUANQRaoe_WdwQkjMcbpHXbCtXWA4KmCiSJO4Spz6zT7eDIszRCHqNfCy0k76sSEQ0Om0x9G6neuaI_zn4f3_odQp8bvxbB__3u6BE5UM9PDRbkafL9ABogI7ZQnvLbJiJ_pDGIvIAbqM4WK3iQlvgkxaCMug7U6QUrYW6m9ngmbSrUyBRSoXeVqYmBysh7kpOH6xqlbu41YF0H2PxXGjShvHfhONTrN_LS1Vi21uJtNCLp7c">
+</div>
+<div class="ml-4 flex-grow pr-2">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">川西徒步计划</h3>
+<p class="text-on-surface-variant font-label-md text-label-sm italic opacity-80">“在群山间找回呼吸的节奏。”</p>
+</div>
+<div class="shrink-0 flex flex-col items-end"><div class="flex items-baseline gap-1"><span class="text-on-surface-variant font-label-sm">还有</span><span class="text-secondary font-display-lg text-[28px] leading-none">42</span><span class="text-on-surface-variant font-label-sm">天</span></div><span class="text-[10px] text-on-surface-variant opacity-60 mt-1">每一天都值得被记录</span></div>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-transform duration-300" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;">
+<div class="flex items-center p-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist workspace setting with a clean white notebook, a premium fountain pen, and a single cup of coffee." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuHmuDyCHuPmVZUoYRoLtnSg4JojUb4R4DjYMgu7Nj9BlHrNYmM2JK9EIdI-84SEgyu57LqQs5Q5ZoD0q3Uy0JsXnfgN7E-JItYREyl3AGYmFGlVnrOYbNYe5v0zBfHiDWlsLJPjZaIPrahUi7a2urPSLFCyfBfKlAb-ri35Cz1Sh6EzIyLicHhchfsn5pAJPPoIxbfP9LcEMH-tLhNmY7oXWKW3BAGPbQXd29qtX2J0p7xXv8QNWiwlu7xtR9n1B7godsKIzUKg0">
+</div>
+<div class="ml-4 flex-grow pr-2">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">设计提案截止</h3>
+<p class="text-on-surface-variant font-label-md text-label-sm italic opacity-80">“灵感总是偏爱专注的心。”</p>
+</div>
+<div class="shrink-0 flex flex-col items-end"><div class="flex items-baseline gap-1"><span class="text-on-surface-variant font-label-sm">还有</span><span class="text-error font-display-lg text-[28px] leading-none">3</span><span class="text-on-surface-variant font-label-sm">天</span></div><span class="text-[10px] text-on-surface-variant opacity-60 mt-1">专注当下的每一刻</span></div>
+</div>
+</div>
+<!-- List Item 4 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-transform duration-300" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;">
+<div class="flex items-center p-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro shot of two hands gently holding a small, vibrant heart-shaped object." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFTamqQzto2hN-3pPhpbd8yQB-C7KNkIgQm8ARBT3i0-8JSk0h8PUd41wdNcLUfKYZpGaKsCRMgxAwVH6S9SxpSt_F-HvoznWfohIeISc-Qq3ZQ9WWG84qCfuik3-DL9eXVgw_lkQezn1AVBA6_mPagmmRjCI2i6KJzgBb-eVFefGLi3KDuYSa_do9ntlPGeUY85NyzIXcxBoFu21ib7MlsoB-vNUAUngHtkvhrVfrao31cQhmUwZ6TG2Y8EjxS2arwOFQ9tE-4uA">
+</div>
+<div class="ml-4 flex-grow pr-2">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">相识三周年</h3>
+<p class="text-on-surface-variant font-label-md text-label-sm italic opacity-80">“陪你走过四季，未觉路远。”</p>
+</div>
+<div class="shrink-0 flex flex-col items-end"><div class="flex items-baseline gap-1"><span class="text-on-surface-variant font-label-sm">还有</span><span class="text-primary-container font-display-lg text-[28px] leading-none">128</span><span class="text-on-surface-variant font-label-sm">天</span></div><span class="text-[10px] text-on-surface-variant opacity-60 mt-1">爱在岁月中沉淀</span></div>
+</div>
+</div>
+<!-- List Item 5 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest border border-outline-variant/30 shadow-[0px_10px_30px_rgba(0,0,0,0.04)] active:scale-[0.98] transition-transform duration-300" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;">
+<div class="flex items-center p-4">
+<div class="w-16 h-16 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="An atmospheric forest path at twilight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwGkPVEzcVcbDkCQn_UhFj1V1HTGtrmhcs6wMLuqT2-Vs79LckHbwmxhlDMkzWkEweYXOa4FP9z3nlRPSv3VmVG2mLdgkrwj_Q-VsaT05sPTXCquzNBJIPk7uU0_5GD3Lo9A2PnzD4UFK7uRDQEq0kOoNCiohdr4KZha90-GPzxWft5NsFkA8WZzTUQXeBIffJuTGdcbr7QrfgjnU8Xjkdu18Pu8KxuP8HkWoMgQVozw-iMla0J5TDuuPkVYl8o7HMNgMbF2uXj0w">
+</div>
+<div class="ml-4 flex-grow pr-2">
+<h3 class="font-headline-sm text-[16px] text-on-surface mb-1">年度体检</h3>
+<p class="text-on-surface-variant font-label-md text-label-sm italic opacity-80">“爱自己的第一步是关心身体。”</p>
+</div>
+<div class="shrink-0 flex flex-col items-end"><div class="flex items-baseline gap-1"><span class="text-on-surface-variant font-label-sm">还有</span><span class="text-secondary font-display-lg text-[28px] leading-none">12</span><span class="text-on-surface-variant font-label-sm">天</span></div><span class="text-[10px] text-on-surface-variant opacity-60 mt-1">温柔地对待自己</span></div>
+</div>
+</div>
+<!-- Bottom Spacer for FAB and safe area -->
+<div class="h-32" style="opacity: 1; transform: translateY(0px); transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s;"></div>
+</div>
+</main>
+<!-- FAB for adding new plans -->
+<button class="fixed bottom-10 right-6 w-14 h-14 rounded-full bg-primary-container shadow-lg flex items-center justify-center text-white active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined" style="font-size: 28px;">add</span>
+</button>
+<script>
+        // Simple micro-interaction for active category chip
+        const chips = document.querySelectorAll('.custom-scrollbar button');
+        chips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                chips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary');
+                    c.classList.add('bg-secondary-container', 'text-on-secondary-container');
+                });
+                chip.classList.remove('bg-secondary-container', 'text-on-secondary-container');
+                chip.classList.add('bg-primary', 'text-on-primary');
+            });
+        });
+
+        // Scroll reveal animation for list items
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.flex.flex-col.gap-stack-gap-md > div').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `all 0.6s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s`;
+            observer.observe(card);
+        });
+    </script>
+
+
+
+
+</body></html>

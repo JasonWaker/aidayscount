@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>我的 - AI 倒计时</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f6f3f5",
+                    "tertiary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed": "#1a1c1c",
+                    "on-background": "#1b1b1d",
+                    "secondary": "#5d5e60",
+                    "outline": "#897362",
+                    "surface-bright": "#fcf8fb",
+                    "on-secondary-fixed-variant": "#454749",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#ffb77d",
+                    "primary": "#904d00",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "surface-variant": "#e4e2e4",
+                    "tertiary": "#5d5f5f",
+                    "surface-container-high": "#eae7ea",
+                    "surface-dim": "#dcd9dc",
+                    "error": "#ba1a1a",
+                    "surface": "#fcf8fb",
+                    "surface-tint": "#904d00",
+                    "on-surface": "#1b1b1d",
+                    "background": "#fcf8fb",
+                    "on-secondary-fixed": "#1a1c1d",
+                    "primary-container": "#ff8c00",
+                    "on-tertiary-container": "#3d3f3f",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#ffb77d",
+                    "on-surface-variant": "#564334",
+                    "on-primary-container": "#623200",
+                    "tertiary-fixed": "#e2e2e2",
+                    "inverse-surface": "#303032",
+                    "secondary-fixed-dim": "#c6c6c8",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#a9aaaa",
+                    "on-primary-fixed-variant": "#6e3900",
+                    "inverse-on-surface": "#f3f0f2",
+                    "secondary-fixed": "#e2e2e4",
+                    "on-secondary-container": "#616365",
+                    "surface-container": "#f0edef",
+                    "secondary-container": "#dfdfe1",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#2f1500",
+                    "primary-fixed": "#ffdcc3",
+                    "outline-variant": "#ddc1ae",
+                    "surface-container-highest": "#e4e2e4",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "12px",
+                    "stack-gap-lg": "24px",
+                    "unit": "4px",
+                    "stack-gap-md": "16px",
+                    "container-padding": "20px",
+                    "stack-gap-sm": "8px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Plus Jakarta Sans"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                    "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fcf8fb;
+            color: #1b1b1d;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid #e5e5e7;
+        }
+        .safe-pb {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center h-14 px-container-padding">
+<div class="active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-primary">settings</span>
+</div>
+<h1 class="font-headline-sm text-headline-sm text-primary">我的</h1>
+<div class="active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</div>
+</header>
+<main class="pt-20 pb-32 px-container-padding flex flex-col gap-stack-gap-lg">
+<!-- Profile Section -->
+<section class="flex flex-col items-center gap-stack-gap-md animate-fade-in"><div class="relative">
+<div class="w-24 h-24 rounded-full bg-surface-container-high flex items-center justify-center border-4 border-surface-container-highest shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[48px]">account_circle</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="font-headline-md text-headline-md text-on-surface">登录/注册</h2>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1 opacity-70">记录每个珍贵时刻</p>
+</div></section>
+<!-- Statistics Card -->
+<section class="bg-surface-container-lowest rounded-xl p-6 border-[0.5px] border-outline-variant/30 flex justify-between items-center shadow-sm">
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-primary">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">正在进行</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20"></div>
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">已完成</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20"></div>
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">已分享</span>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/20"></div>
+<div class="flex flex-col items-center flex-1">
+<span class="font-headline-sm text-headline-sm text-on-surface">0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">累计记录</span>
+</div>
+</section>
+<!-- Premium Banner (Subtle Promotion) -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 p-5 border border-primary/10 group active:scale-[0.98] transition-all">
+<div class="relative z-10 flex justify-between items-center">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Pro会员中心</h3>
+<p class="font-label-md text-label-md text-on-primary-fixed-variant">解锁无限倒计时与AI智能分类</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">workspace_premium</span>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+</div>
+<!-- Menu List -->
+<section class="flex flex-col gap-stack-gap-sm">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border-[0.5px] border-outline-variant/30">
+<!-- Menu Item 1 -->
+<button class="w-full flex items-center justify-between p-4 active:bg-surface-container-high transition-colors text-left">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-primary">dashboard_customize</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">我的模板</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</button>
+<div class="mx-4 h-[0.5px] bg-outline-variant/10"></div>
+<!-- Menu Item 2 -->
+<button class="w-full flex items-center justify-between p-4 active:bg-surface-container-high transition-colors text-left">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">我的收藏</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</button>
+<div class="mx-4 h-[0.5px] bg-outline-variant/10"></div>
+<!-- Menu Item 3 -->
+<button class="w-full flex items-center justify-between p-4 active:bg-surface-container-high transition-colors text-left">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-primary">center_focus_strong</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">中心设置</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</button>
+<div class="mx-4 h-[0.5px] bg-outline-variant/10"></div>
+<!-- Menu Item 4 -->
+<button class="w-full flex items-center justify-between p-4 active:bg-surface-container-high transition-colors text-left">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-primary">contact_support</span>
+</div>
+<span class="font-body-lg text-body-lg text-on-surface">帮助与反馈</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Secondary Info -->
+<div class="text-center opacity-30 py-4">
+<p class="font-label-sm text-label-sm">AI 倒计时 v2.4.0</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-t border-outline-variant/30 safe-pb flex justify-around items-center h-16"><button class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:bg-surface-container-low transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">首页</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:bg-surface-container-low transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-md text-label-md">倒数本</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-md text-label-md">我的</span>
+</button></nav>
+<script>
+        // Micro-interactions and effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('button');
+            menuItems.forEach(item => {
+                item.addEventListener('touchstart', () => {
+                    item.style.transform = 'scale(0.98)';
+                });
+                item.addEventListener('touchend', () => {
+                    item.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body></html>

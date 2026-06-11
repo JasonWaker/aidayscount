@@ -1,0 +1,264 @@
+<!DOCTYPE html><html class="light" lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#303032",
+                        "outline": "#897362",
+                        "surface-bright": "#fcf8fb",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-fixed": "#e2e2e2",
+                        "primary-container": "#ff8c00",
+                        "surface-container": "#f0edef",
+                        "on-primary-container": "#623200",
+                        "primary": "#904d00",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eae7ea",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-secondary-fixed-variant": "#454749",
+                        "on-background": "#1b1b1d",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#ffb77d",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#564334",
+                        "inverse-on-surface": "#f3f0f2",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-secondary-container": "#616365",
+                        "surface-tint": "#904d00",
+                        "tertiary-container": "#a9aaaa",
+                        "secondary": "#5d5e60",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#3d3f3f",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#fcf8fb",
+                        "on-surface": "#1b1b1d",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "outline-variant": "#ddc1ae",
+                        "primary-fixed-dim": "#ffb77d",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#e2e2e4",
+                        "secondary-container": "#dfdfe1",
+                        "background": "#fcf8fb",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "tertiary": "#5d5f5f",
+                        "primary-fixed": "#ffdcc3",
+                        "surface-dim": "#dcd9dc",
+                        "surface-container-low": "#f6f3f5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-md": "16px",
+                        "stack-gap-sm": "8px",
+                        "unit": "4px",
+                        "stack-gap-lg": "24px",
+                        "container-padding": "20px",
+                        "gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F7; /* Apple Style Light Gray Bg */
+        }
+        .glass-header {
+            background: rgba(252, 248, 251, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        .ios-inset-grouped {
+            margin: 0 20px 24px 20px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 0.5px solid #E5E5E7;
+        }
+        .ios-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            background: white;
+            transition: background 0.2s;
+        }
+        .ios-item:active {
+            background: #F2F2F7;
+        }
+        .ios-divider {
+            margin-left: 16px;
+            height: 0.5px;
+            background: #E5E5E7;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-ring {
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #ff8c00;
+        }
+        /* Custom input focus */
+        input:focus {
+            outline: none;
+            border-bottom-color: #ff8c00 !important;
+        }
+    </style>
+</head>
+<body class="text-on-background antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header h-14 flex items-center px-container-padding justify-between">
+<button class="flex items-center justify-center w-10 h-10 -ml-2 active:scale-95 transition-transform" onclick="history.back()">
+<span class="material-symbols-outlined text-primary text-[24px]">chevron_left</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm font-semibold text-on-surface">新增分类</h1>
+<button class="font-label-md text-label-md text-primary-container font-semibold hover:opacity-80 active:scale-95 transition-all">
+            完成
+        </button>
+</header>
+<main class="pt-20 pb-32">
+<!-- Form Section 1: Basic Info -->
+<div class="ios-inset-grouped">
+<div class="ios-item">
+<label class="font-label-md text-label-md text-on-surface-variant w-24">分类名称</label>
+<input class="flex-1 border-none focus:ring-0 p-0 text-body-md font-body-md text-on-surface bg-transparent placeholder-on-surface-variant/40" placeholder="例如：纪念日" type="text">
+</div>
+<div class="ios-divider"></div>
+<div class="ios-item cursor-pointer">
+<label class="font-label-md text-label-md text-on-surface-variant w-24">图标</label>
+<div class="flex-1 flex items-center justify-end gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Form Section 2: Cover Image -->
+<div class="px-container-padding mb-2">
+<h2 class="text-label-sm font-label-sm text-on-surface-variant font-bold uppercase tracking-wider mb-2">封面</h2>
+</div>
+<div class="ios-inset-grouped">
+<div class="p-4">
+<div class="flex overflow-x-auto gap-3 pb-2 no-scrollbar"><!-- Sunset Warm Gradient -->
+<div class="flex-none w-16 h-20 rounded-xl bg-gradient-to-br from-orange-400 to-rose-500 cursor-pointer active-ring"></div>
+<!-- Deep Ocean Blue -->
+<div class="flex-none w-16 h-20 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-900 cursor-pointer"></div>
+<!-- Soft Forest Green -->
+<div class="flex-none w-16 h-20 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-700 cursor-pointer"></div>
+<!-- Glassmorphism Effect -->
+<div class="flex-none w-16 h-20 rounded-xl bg-white/30 backdrop-blur-md border border-white/20 cursor-pointer relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-tr from-purple-500/20 to-blue-500/20"></div>
+</div>
+<!-- Minimalist Pattern: Waves -->
+<div class="flex-none w-16 h-20 rounded-xl overflow-hidden relative cursor-pointer">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3O3EuGaG0UZOsIkMjXGoYMF60KV06JuAOB1VZD-fcOuLMC8Gh7DSyUDqI7btfn60cpfE3dZ4C7NNfrQYP0P7DHw9mU8PlvUjgCacnFZ9Vrkg9HkAcTX2T6LpiUN8hOj4FgXdl7CyB7GJat4pXJjoruvvM7JHjE0BDBywSxhgjRiP-aHrMh3pl1_o98XTvievhzoPfDjlXliQssIbP9zN1CR535MrCxrI1UpgiBRTPaqiyT1SwZ6cdLaRD75mqz6NXqcFg0-nKNqg" class="w-full h-full object-cover opacity-80">
+</div>
+<!-- Abstract Geometric -->
+<div class="flex-none w-16 h-20 rounded-xl overflow-hidden relative cursor-pointer">
+    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO5n54tY2zbbYMvSwrJPxFfkcoPc9jVrXOzKP3lEDOUExFPRm9H3csOY17uz9pPzCfu7D9ay8OiUO--LhayzeXUWPYLQN41i3EOtcYS2lOG3vGYiub5qJ_Fm3rA3G4sVd3JAGb76l0uMBFfStJ9vp37ITDdH4MYZnT9mpiwKvXHAP5oBL_JWAHwkAms5IQeKFzkKt6S9RdZYnLDQbZG1U1z_ASMMPAnR-_wjojd2pYifayZ-w2TuUdCWtZdPvWpXYOGP2G_NKOMhQ" class="w-full h-full object-cover">
+</div></div>
+</div>
+</div>
+<!-- Form Section 3: Pro Feature -->
+<div class="px-container-padding mb-2 flex items-center gap-2">
+<h2 class="text-label-sm font-label-sm text-on-surface-variant font-bold uppercase tracking-wider">背景图片</h2>
+<span class="px-1.5 py-0.5 bg-gradient-to-r from-amber-400 to-yellow-600 text-[10px] text-white font-bold rounded-sm leading-none">PO</span>
+</div>
+<div class="ios-inset-grouped">
+<div class="ios-item cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mr-3 text-[20px]">photo_camera</span>
+<span class="flex-1 font-body-md text-body-md text-on-surface">手机拍照</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">chevron_right</span>
+</div>
+<div class="ios-divider"></div>
+<div class="ios-item cursor-pointer">
+<span class="material-symbols-outlined text-on-surface-variant mr-3 text-[20px]">image</span>
+<span class="flex-1 font-body-md text-body-md text-on-surface">从相册选择</span>
+<span class="material-symbols-outlined text-on-surface-variant/40 text-[18px]">chevron_right</span>
+</div>
+<div class="ios-divider"></div>
+<div class="p-4 bg-surface-container-low">
+<div class="w-full aspect-[16/6] rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant/30 relative overflow-hidden">
+<span class="material-symbols-outlined text-[32px] mb-1">add_photo_alternate</span>
+<span class="text-label-sm font-label-sm">背景图预览</span>
+<!-- Shader Effect Placeholder for premium feel -->
+
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Action -->
+<footer class="fixed bottom-0 w-full bg-surface/80 backdrop-blur-xl px-container-padding pt-4 pb-safe flex flex-col items-center">
+<button class="w-full h-12 bg-primary-container text-on-primary font-semibold rounded-full flex items-center justify-center gap-2 shadow-sm active:scale-95 transition-all mb-4">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+            保存分类
+        </button>
+</footer>
+<!-- Interaction Script -->
+<script>
+        // Simple micro-interaction for cover selection
+        const coverItems = document.querySelectorAll('.ios-inset-grouped [class*="flex-none"]');
+        coverItems.forEach(item => {
+            item.addEventListener('click', () => {
+                coverItems.forEach(i => i.classList.remove('active-ring'));
+                item.classList.add('active-ring');
+            });
+        });
+
+        // Simple scroll listener to change header opacity
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-sm');
+            } else {
+                header.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+
+
+</body></html>

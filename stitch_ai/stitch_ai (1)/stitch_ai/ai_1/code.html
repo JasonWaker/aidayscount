@@ -1,0 +1,258 @@
+<!DOCTYPE html><html class="light" lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport">
+<title>AI倒数日 - 首页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#e2e2e4",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb77d",
+                        "primary-container": "#ff8c00",
+                        "surface-dim": "#dcd9dc",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#623200",
+                        "surface": "#fcf8fb",
+                        "secondary": "#5d5e60",
+                        "on-surface-variant": "#564334",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-primary-fixed": "#2f1500",
+                        "tertiary": "#5d5f5f",
+                        "outline": "#897362",
+                        "surface-tint": "#904d00",
+                        "inverse-primary": "#ffb77d",
+                        "on-secondary-fixed-variant": "#454749",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "background": "#fcf8fb",
+                        "on-surface": "#1b1b1d",
+                        "surface-container-high": "#eae7ea",
+                        "on-tertiary-container": "#3d3f3f",
+                        "outline-variant": "#ddc1ae",
+                        "inverse-surface": "#303032",
+                        "tertiary-container": "#a9aaaa",
+                        "on-background": "#1b1b1d",
+                        "surface-bright": "#fcf8fb",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "surface-container-highest": "#e4e2e4",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "tertiary-fixed": "#e2e2e2",
+                        "secondary-container": "#dfdfe1",
+                        "surface-container-low": "#f6f3f5",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f0edef",
+                        "primary-fixed": "#ffdcc3",
+                        "on-secondary-container": "#616365",
+                        "surface-variant": "#e4e2e4",
+                        "primary": "#904d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-lg": "24px",
+                        "unit": "4px",
+                        "container-padding": "20px",
+                        "stack-gap-md": "16px",
+                        "gutter": "12px",
+                        "stack-gap-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', 'PingFang SC', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl">
+<div class="flex items-center justify-between px-container-padding h-14 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
+<div class="flex flex-col -gap-1">
+<h1 class="font-headline-sm text-headline-sm text-primary font-semibold">AI倒数日</h1>
+</div>
+</div>
+
+</div>
+<div class="px-container-padding pb-2">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-70">记录重要时刻，让等待更有意义</p>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-padding space-y-stack-gap-lg overflow-y-auto no-scrollbar">
+<!-- Hero Section: Pinned Countdown -->
+<section class="relative h-[280px] w-full rounded-3xl overflow-hidden shadow-sm group">
+<img alt="Pinned Event Background" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIj8E8i9_fIiG6OsHDBMH78iUt_x9G5Rm-JUL3GJKLjSDFHVMX_aw-y3w0Kq4TX_FMr7N3ZtbzIGn0e_g98YJG3kNvU-z9Pkb_bRCWlHEQKe8Jd6lYKJbnA5dUQVWflVq35ykoBYCwrl22ZYNgd9HWnbJliJDQTaIbjAQM2YxNWrZHzC-nHHLodxzn13mJ3Jkym_W5EiYFQ6yNkjtgIEQPYfEGZ7CEvKadj1j40rMTmLuviwydjZAwdKCjtBdMHy1H3GSWDEOP89I">
+<div class="absolute inset-0 bg-black/10"></div>
+<div class="absolute inset-0 glass-card m-4 rounded-[20px] p-container-padding flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<span class="inline-flex items-center gap-1 bg-primary text-on-primary px-3 py-1 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="push_pin" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+                            置顶
+                        </span>
+<h2 class="mt-4 font-headline-md text-headline-md text-on-surface font-bold">结婚纪念日</h2>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant/40" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg text-display-lg text-primary-container">128</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">天后</span>
+</div>
+<div class="flex items-center gap-2 pt-2 border-t border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-body-md text-body-md italic text-on-surface-variant/80">“愿此时光如酒，待相拥时已至醇香。”</p>
+</div>
+</div>
+</section>
+<!-- List Section Header -->
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">所有计划</h3>
+<button class="font-label-md text-label-md text-primary flex items-center gap-1">
+                查看全部 <span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<!-- List Section: Countdown Cards -->
+<div class="grid grid-cols-1 gap-stack-gap-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex gap-4 items-center border border-outline-variant/30 hover:border-primary/30 transition-colors shadow-sm group">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Mother's Birthday" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYHKzSshvIXpPuDNd0U6VR21-0Sw6NF2-cUyapw5YId69TXi81Vg7o_eiuQgwqVtNbE1APKU5MuxFaoSbVvnchRj2IX7VgDWlK_rPJo_-RUvyK228F_8iDJA_D49MOAjS6sRpz5bl4YESR0KNLlOeZ9RPLejSt5GWDEsMVZtbZmGnkePwsioD8M2QxYd1GOtDeadeWdagFIYp1kM97rVrglJnIn4qj29mP5_lvkkys9DZtJKxndU_06mVtOdv7b6bftaD3MJUmslU">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">生活</span>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">15</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">天后</span>
+</div>
+<div class="w-14 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 65%;"></div>
+</div>
+</div>
+</div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold truncate">妈妈生日</h4>
+<p class="font-label-md text-label-md text-secondary truncate mt-1 italic">“AI提醒：那是爱开始萌芽的日子，一束康乃馨足以温暖整个季节。”</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex gap-4 items-center border border-outline-variant/30 hover:border-primary/30 transition-colors shadow-sm group">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden flex-shrink-0">
+<img alt="Year-end Trip" class="w-full h-full object-cover transition-transform group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD4Gd2ePBQ2yvQyS5r0Im9WJ5OkwYLUWasf7i1mlZgvxr5K94XBUXncy6AnvkaZWqsRe95Mew2Lda5hVyHdoZUbugp5wkS2gPnIqIb6g2V02OW4F4ajyAo-EzfsPrub1bXxOEM7B6gQAbBaih6T9RC7fDKZ2vv6smh46LiSxODIV6fZ9TEqkDaMSbg-e9NaG8bAGva7CUaXka6mcDcBK2Ew3RTtMcapOy4aw2PwKjW0bNMPj8Vg4FI2mk6iQnX9j7aRP_ilFxXu9o">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">旅行</span>
+<div class="flex flex-col items-end gap-1"><div class="flex items-baseline gap-1"><span class="font-headline-sm text-headline-sm text-primary">42</span><span class="font-label-sm text-label-sm text-on-surface-variant">天后</span></div><div class="w-14 h-1 bg-surface-container-high rounded-full overflow-hidden"><div class="h-full bg-primary-container rounded-full" style="width: 45%;"></div></div></div>
+</div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold truncate">年终旅行</h4>
+<p class="font-label-md text-label-md text-secondary truncate mt-1 italic">“AI提醒：雪国列车正鸣笛，远方的山峦正悄悄换上银装。”</p>
+</div>
+</div>
+<!-- Card 3 (Visual Placeholder for more items) -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 flex gap-4 items-center border border-outline-variant/30 hover:border-primary/30 transition-colors shadow-sm group">
+<div class="relative w-20 h-20 rounded-xl bg-surface-container-high flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="work">work</span>
+</div>
+<div class="flex-grow min-w-0">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">工作</span>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-sm text-headline-sm text-primary">8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">天后</span>
+</div>
+<div class="w-14 h-1 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+</div>
+<h4 class="font-body-lg text-body-lg text-on-surface font-semibold truncate">项目交付</h4>
+<p class="font-label-md text-label-md text-secondary truncate mt-1 italic">“AI提醒：专注当下的每一刻，收获将与你的汗水成正比。”</p>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary-container text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-all z-40 group overflow-hidden">
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<span class="material-symbols-outlined text-[32px]" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full bg-white/80 dark:bg-surface-container/80 backdrop-blur-xl border-t border-outline-variant/30 shadow-sm z-50 flex justify-around items-center pt-2 pb-safe px-4 safe-bottom h-16"><a class="flex flex-col items-center justify-center text-primary font-semibold transition-all active:scale-90" href="#"><span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span><span class="font-label-md text-label-md">首页</span></a><a class="flex flex-col items-center justify-center text-secondary hover:bg-secondary-container/20 transition-all active:scale-90 px-4 py-1 rounded-xl" href="#"><span class="material-symbols-outlined" data-icon="book">book</span><span class="font-label-md text-label-md">倒数本</span></a><a class="flex flex-col items-center justify-center text-secondary hover:bg-secondary-container/20 transition-all active:scale-90 px-4 py-1 rounded-xl" href="#"><span class="material-symbols-outlined" data-icon="person">person</span><span class="font-label-md text-label-md">我的</span></a></nav>
+<script>
+        // Simple scroll interaction for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.add('bg-white');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.remove('bg-white');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body></html>

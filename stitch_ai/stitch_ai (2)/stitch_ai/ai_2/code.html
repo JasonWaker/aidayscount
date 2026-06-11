@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#564334",
+                        "on-error-container": "#93000a",
+                        "outline": "#897362",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "surface-bright": "#fcf8fb",
+                        "inverse-primary": "#ffb77d",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#e4e2e4",
+                        "secondary-fixed": "#e2e2e4",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#a9aaaa",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#3d3f3f",
+                        "on-secondary-fixed-variant": "#454749",
+                        "inverse-on-surface": "#f3f0f2",
+                        "on-primary-fixed-variant": "#6e3900",
+                        "secondary": "#5d5e60",
+                        "surface-tint": "#904d00",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb77d",
+                        "outline-variant": "#ddc1ae",
+                        "secondary-fixed-dim": "#c6c6c8",
+                        "on-surface": "#1b1b1d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#ff8c00",
+                        "surface": "#fcf8fb",
+                        "on-primary-fixed": "#2f1500",
+                        "background": "#fcf8fb",
+                        "tertiary": "#5d5f5f",
+                        "surface-dim": "#dcd9dc",
+                        "surface-container": "#f0edef",
+                        "primary-fixed": "#ffdcc3",
+                        "on-secondary-fixed": "#1a1c1d",
+                        "surface-container-low": "#f6f3f5",
+                        "on-secondary-container": "#616365",
+                        "on-primary-container": "#623200",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#303032",
+                        "surface-container-high": "#eae7ea",
+                        "on-background": "#1b1b1d",
+                        "secondary-container": "#dfdfe1",
+                        "primary": "#904d00",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "12px",
+                        "stack-gap-sm": "8px",
+                        "stack-gap-md": "16px",
+                        "stack-gap-lg": "24px",
+                        "unit": "4px",
+                        "container-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                        "body-lg": ["17px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fcf8fb;
+            font-family: 'Inter', sans-serif;
+            color: #1b1b1d;
+            -webkit-font-smoothing: antialiased;
+        }
+        .poster-shadow {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<nav class="bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-xl border-none fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-gutter h-14 w-full">
+<button class="active:scale-95 transition-transform hover:opacity-80 p-2"><span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">arrow_back_ios_new</span></button>
+<h1 class="text-headline-sm font-headline-sm font-semibold text-on-surface dark:text-on-surface-variant">倒数日 · 保存图片</h1>
+<div class="w-10"></div>
+</nav>
+<main class="mt-14 px-container-padding space-y-stack-gap-lg pt-6">
+<!-- Poster Preview Card -->
+<section class="relative aspect-[4/5] rounded-[32px] overflow-hidden poster-shadow group bg-surface-container-highest">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A breathtaking sunset landscape view overlooking a calm body of water with distant mountains. The sky is filled with warm orange and soft purple gradients reflecting on the serene surface. This minimalist digital photography piece captures a healing aesthetic with high-key lighting and a sense of profound peace and cinematic scale." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGCts3W_Jbo6bJtTpHcpIDyMs7CFLqgQT0oJqjev5AHKkiylvzpO1C9wpQ_fFTN6hou7SBBiBSoo9Oc0LEzcAUWywhwcjlIDM1kPAFFs4eBIvBVQGhcUKMfh9i9i3ckvbAXxt1Oi6t5mQ2yXa8Tk-H92b6f5dL6j_LyvyudXXVqmgryBgh7vc9XAYzS5woqlhT1Mx2UVZu7ckjZJOcA3yTATPwKpYD3blDpEuN2YWyc1o9jKZcgOKFBpMVOlxB2fPMZ8Lx-2Y2SoI')">
+</div>
+<!-- Glassmorphism Overlay -->
+<div class="absolute inset-0 bg-black/10 backdrop-blur-[2px]"></div>
+<!-- Content -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-8">
+<p class="font-headline-sm text-headline-sm mb-2 opacity-90">距离儿子生日还有</p>
+<h2 class="font-display-lg text-[120px] leading-none mb-4 font-bold tracking-tight">128</h2><p class="font-label-md text-label-md tracking-widest opacity-80 -mt-2 mb-4">天</p>
+<div class="w-12 h-1 bg-white/40 rounded-full mb-6"></div>
+<p class="font-label-md text-label-md bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 mt-2">目标日：2026年07月16日 星期四</p>
+</div>
+<!-- Brand Logo Watermark -->
+<div class="absolute bottom-6 right-6 flex items-center gap-2 opacity-60">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span class="font-label-sm text-label-sm tracking-wider">Days Matter</span>
+</div>
+</section>
+<!-- Template Selection -->
+<section class="space-y-stack-gap-md"><nav class="flex gap-4 overflow-x-auto hide-scrollbar -mx-container-padding px-container-padding">
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md"><span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">arrow_back_ios_new</span></button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">极简</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">风景</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">动漫</button>
+<button class="flex-shrink-0 px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md">二次元</button>
+</nav>
+<div class="grid grid-cols-2 gap-4">
+<div class="relative aspect-square rounded-2xl overflow-hidden group border-2 border-primary ring-2 ring-primary/20 cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuq2ym6xWsUGWWKgBDlu2PFg1slNFMCLPn0VQclg0WG7ScRM66WgArhySCouSILV4zMajAgX7VW9dXNhBXckMvLTaIyI8eqAuYDxzq95-9tJN8NzaZ-me4UBSk44G3BB-yz6rgyIVHhFITKCqRDHx7UlufZ_4PDpXik9LBWkKB5tatoEJE-A65wDXIqO6ldoVEPwNusTNtTGD_ln4_4AgAh2KfZ-J66fI2876xanBmEqMMIpFeTeug_NTqGdEOr7fYHMrM2DPkMZc');"></div>
+<div class="absolute inset-0 flex items-center justify-center bg-black/10">
+<span class="text-white text-3xl font-bold">37</span>
+</div>
+<div class="absolute bottom-2 left-2 right-2 flex justify-between items-center">
+<span class="text-white font-label-sm text-[10px] drop-shadow-md">天空</span>
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer hover:shadow-lg transition-all duration-300">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqCcfZT6ulvuCXiVfvICwFDNYz1Lgl-K9PsuaS8fgmIJUOH4mhkBDjiF_3BNCXBMXDq4IlKGgFnrLSB6OJZmd6stKT0ylMVmSfDPfO__UjqOzQNVbh_20cmqTLfbv07YfWuzakUA_8tr-6SWi5SoPuOlHLEvTZwPGUwTT8JNl9cAqmBD3uxWuaO0b-fAuW1RDT7ueC0H_ut6dkD2P1s3b4sIoixtsXXaA1mNMwseIQZgPrSCBtsTESL8-QuXt9ofQCYhuM-tJEn7c');"></div>
+<div class="absolute top-2 right-2 bg-[#FFD700] px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white font-label-sm text-[10px] font-bold">Pro</span>
+</div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="text-white text-2xl font-body-lg">01:07:34</span>
+</div>
+<div class="absolute bottom-2 left-2">
+<span class="text-white font-label-sm text-[10px] drop-shadow-md">现代主义</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer bg-[#FFD1DC]">
+<div class="absolute inset-0 flex flex-col items-center justify-center text-[#FF5E78]">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-2xl font-bold">23</span>
+</div>
+<div class="absolute top-2 right-2 bg-[#FFD700] px-1.5 py-0.5 rounded-md flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[10px] text-white" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-white font-label-sm text-[10px] font-bold">Pro</span>
+</div>
+<div class="absolute bottom-2 left-2">
+<span class="text-[#FF5E78] font-label-sm text-[10px]">恋爱宣言</span>
+</div>
+</div>
+<div class="relative aspect-square rounded-2xl overflow-hidden group cursor-pointer bg-inverse-surface">
+<div class="absolute inset-0 flex flex-col items-center justify-center text-primary-fixed-dim">
+<span class="text-3xl font-bold">15</span>
+<span class="text-[10px] font-bold">MONTHS</span>
+</div>
+<div class="absolute bottom-2 left-2">
+<span class="text-surface-variant font-label-sm text-[10px]">倒计时月</span>
+</div>
+</div>
+</div></section>
+<!-- Action Row: Custom Upload -->
+<button class="w-full flex items-center justify-between p-4 rounded-2xl bg-white border border-outline-variant/30 active:scale-[0.98] transition-all">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">image</span>
+<span class="font-body-md text-on-surface">选择本地图片背景</span>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</button>
+<!-- Personal Quote Input -->
+<div class="p-4 rounded-2xl bg-white border border-outline-variant/30 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-1">edit_note</span>
+<textarea class="w-full border-none p-0 focus:ring-0 text-body-md text-on-surface-variant placeholder:text-outline/50 bg-transparent resize-none" placeholder="写一点关于这个日子的寄语吧..." rows="2"></textarea>
+</div>
+</main>
+<!-- Bottom Action Bar (BottomNavBar styled as Action Bar) -->
+<div class="fixed bottom-0 left-0 w-full px-container-padding pb-8 pt-4 flex justify-between items-center bg-surface-container-low/90 backdrop-blur-2xl border-t border-outline-variant/30 shadow-lg z-50 rounded-t-xl">
+<button class="flex flex-row items-center justify-center bg-primary-container text-on-primary-container rounded-full px-12 py-4 gap-2 active:scale-95 duration-200 shadow-md hover:brightness-110 flex-grow mr-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-label-md font-label-md">保存</span>
+</button>
+<button class="flex flex-row items-center justify-center bg-surface-container text-on-surface-variant rounded-full px-6 py-4 gap-2 active:scale-95 duration-200 hover:brightness-110">
+<span class="material-symbols-outlined">share</span>
+<span class="text-label-md font-label-md">分享</span>
+</button>
+</div>
+<script>
+        // Simple Interaction for Template Selection
+        const templates = document.querySelectorAll('.flex-shrink-0.w-24');
+        templates.forEach(template => {
+            template.addEventListener('click', () => {
+                templates.forEach(t => {
+                    const imgContainer = t.querySelector('.aspect-square');
+                    const textLabel = t.querySelector('p');
+                    imgContainer.classList.remove('border-4', 'border-primary', 'shadow-md');
+                    imgContainer.classList.add('border', 'border-outline-variant/30');
+                    if(textLabel) {
+                        textLabel.classList.remove('text-primary', 'font-bold');
+                        textLabel.classList.add('text-on-surface-variant');
+                    }
+                });
+                const selectedImgContainer = template.querySelector('.aspect-square');
+                const selectedTextLabel = template.querySelector('p');
+                selectedImgContainer.classList.add('border-4', 'border-primary', 'shadow-md');
+                selectedImgContainer.classList.remove('border', 'border-outline-variant/30');
+                if(selectedTextLabel) {
+                    selectedTextLabel.classList.add('text-primary', 'font-bold');
+                    selectedTextLabel.classList.remove('text-on-surface-variant');
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body></html>
