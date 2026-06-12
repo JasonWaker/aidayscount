@@ -1,17 +1,58 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "AI倒数日"
+			}
+		},
+		{
+			"path": "pages/book/book",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "倒数本"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationStyle": "custom",
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "AI倒数日",
+		"navigationBarBackgroundColor": "#fcf8fb",
+		"backgroundColor": "#fcf8fb"
+	},
+	"tabBar": {
+		"color": "#999999",
+		"selectedColor": "#904d00",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"iconPath": "static/icons/home.png",
+				"selectedIconPath": "static/icons/home-active.png"
+			},
+			{
+				"pagePath": "pages/book/book",
+				"text": "倒数本",
+				"iconPath": "static/icons/book.png",
+				"selectedIconPath": "static/icons/book-active.png"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"text": "我的",
+				"iconPath": "static/icons/person.png",
+				"selectedIconPath": "static/icons/person-active.png"
+			}
+		]
 	},
 	"uniIdRouter": {}
 }
